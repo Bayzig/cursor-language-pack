@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/platform/agentHarness/common/agentHostUpdate.config.contribution": {
+      "agentHostConfigurationTitle": "智慧體主機",
+      "agentHostUpdateMode": "控制在 Cursor 各版本之間，是否更新負責本機智慧體回合的程式。更新從 Cursor 服務下載，並在下一次智慧體回合時生效。",
+      "agentHostUpdateMode.default": "跟隨 update.mode：除非關閉了 Cursor 更新，否則會更新。",
+      "agentHostUpdateMode.none": "永不更新，繼續使用目前 Cursor 版本自帶的智慧體。",
+      "agentHostUpdateMode.on": "即使關閉了 Cursor 更新，也進行更新。"
+    },
+    "vs/platform/cursorStartupHttp/common/startupConnectTransportSetting": {
+      "cursor.experimental.startupConnectTransport": "實驗功能。視窗啟動時就開啟後端登入閘門，並由主處理程序處理 Connect 請求，而不必等待 Cursor Always Local 擴充功能。除非你的帳戶也啟用了這項實驗，否則不會生效。重新載入視窗後生效。"
+    },
+    "vs/workbench/browser/parts/editor/cloneRepoFromEmptyScreen": {
+      "emptyScreen.cloneRepo.downloadGit": "下載 Git",
+      "emptyScreen.cloneRepo.gitUnavailable": "複製儲存庫需要 Git。請安裝 Git，或啟用內建 Git 擴充功能，然後重新啟動 Cursor。"
+    },
+    "vs/workbench/contrib/aiConfig/browser/aiconfig.contribution": {
+      "agent.remoteWorkspaceAuthorities.description": "由裝置管理設定時，本機視窗會停用智慧體，只在遠端工作區啟用。值為空時允許所有遠端位址；否則填寫逗號分隔的模式，不區分大小寫，可用 * 萬用字元（例如 ssh-remote+127.0.0.1*）。",
+      "agent.remoteWorkspaceAuthorities.policyDescription": "要求智慧體在遠端工作區中執行，並可選用逗號分隔的遠端位址模式加以限制。值為空時允許所有遠端位址。",
+      "agent.remoteWorkspaceAuthorities.title": "智慧體遠端工作區位址"
+    },
+    "vs/workbench/contrib/composer/browser/components/PromptEditInput.react": {
+      "composer.promptEditInput.ariaLabel": "編輯訊息"
+    },
+    "vs/workbench/contrib/composer/browser/composerLogService": {
+      "cursorComposerLoggerName": "Cursor Composer"
+    },
+    "vs/workbench/contrib/composer/browser/inlineDiffSuppressionNotification": {
+      "inlineDiff.disableProtection": "停用保護",
+      "inlineDiff.tooManyChanges": "由於變更過多無法顯示，最近變更的內嵌差異已被抑制。"
+    },
+    "vs/workbench/contrib/composer/browser/promptInputTrays/PromptInputAnchoredTrayHovercard.react": {
+      "composer.anchoredTray.previewAriaLabel": "{0} 的預覽"
+    },
+    "vs/workbench/contrib/composer/browser/realtimeVoice/realtimeVoiceTranscriptEditor": {
+      "composer.realtimeVoice.transcriptEditor": "語音通話"
+    },
+    "vs/workbench/contrib/tracing/electron-sandbox/tracing.contribution": {
+      "captureDebuggingDataNotePlaceholder": "出了什麼問題？（選用）"
+    },
+    "vs/workbench/contrib/ui/browser/aiInput/plugins/mentions/MentionNode": {
+      "mentionChip.removeMention": "移除提及"
+    },
+    "vs/workbench/contrib/update/browser/update": {
+      "updateDidNotInstallRetrying": "{0} 未能完成到版本 {1} 的更新。正在重新下載更新。"
+    },
+    "vs/workbench/services/ai/common/backendUrl": {
+      "isLocalBackend": "用戶端是否指向本機上執行的後端"
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursor.xaiIdentity.enabled": "透過裝置管理 (MDM) 啟用後，Cursor 會經由 xAI（auth.x.ai）登入，而不是 Cursor 帳戶，並在此裝置上驗證 xAI 權杖。"
+    }
+  }
+}
