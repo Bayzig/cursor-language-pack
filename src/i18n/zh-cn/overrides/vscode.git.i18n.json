@@ -1,0 +1,13 @@
+{
+  "$comment": "Backports missing from the pinned vscode-loc snapshot (engine 1.128.0). Cursor's fork of vscode.git added these package.nls keys after the pin; the `` key style matches upstream's bundle section (file is merged over upstream, which has no `package` map — nothing is overwritten).",
+  "version": "1.0.0",
+  "contents": {
+    "": {
+      "command.deleteWorktreeFromPalette": "删除工作树...",
+      "command.git.resolveAllConflictsInChat": "在 Chat 中解决",
+      "config.blameEditorDecoration.forceDisabled": "启用后，将强制禁用编辑器中的 Git 责任者 (blame) 装饰，并覆盖任何工作区级设置。这是一个应用级设置。",
+      "config.diagnosticsCommitHook.Enabled": "控制提交前是否检查未解决的诊断问题。",
+      "config.diagnosticsCommitHook.Sources": "控制提交前要考虑的来源列表（**Item**）和最低严重程度（**Value**）。**注意：**若要忽略来自特定来源的诊断，请将该来源添加到列表中，并将最低严重程度设置为 `none`。"
+    }
+  }
+}

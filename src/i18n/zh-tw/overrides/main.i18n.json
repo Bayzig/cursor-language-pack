@@ -6,9 +6,77 @@
   // <cursor>/resources/app/out/nls.keys.json. Run `npm run extract` and grep
   // metadata/cursor.json to find the module a string belongs to.
   //
-  // Use this file when the upstream VS Code wording clashes with Cursor's own
-  // terminology. Keep it small — every entry here is a divergence from a
-  // translation that Microsoft maintains for free.
+  // Corrections layered on top of the vscode-loc baseline for the core workbench.
+  //
+  // Two kinds of entries live here:
+  //   1. Wording fixes — the upstream VS Code translation clashes with Cursor's
+  //      own terminology. Keep these rare; every entry is a divergence from a
+  //      translation Microsoft maintains for free.
+  //   2. Fallbacks — the vscode-loc snapshot in upstream/ is pinned to
+  //      engine 1.128.0 (see config.json → upstream.ref), while Cursor's fork
+  //      backports newer strings into that engine. Those keys have no upstream
+  //      translation at all and would otherwise ship English.
+  //
+  // Keys are `<module path>` -> `<nls key>`, exactly as they appear in
+  // <cursor>/resources/app/out/nls.keys.json. Run `npm run extract` and grep
+  // metadata/cursor.json to find the module a string belongs to.
   "version": "1.0.0",
-  "contents": {}
+  "contents": {
+    "vs/editor/common/standaloneStrings": {
+      "chatEditing.navigation": "在編輯器中通過上一個{0}、下一個{1}在編輯之間導航，並可接受{2}、拒絕{3}或檢視當前更改的差異{4}。"
+    },
+    "vs/editor/contrib/gotoError/browser/gotoErrorWidget": {
+      "marker aria": "{0}，位於 {1}。"
+    },
+    "vs/editor/contrib/hover/browser/markdownHoverParticipant": {
+      "stopped rendering": "出於效能原因，已暫停對超長行的渲染。可通過 `editor.stopRenderingLineAfter` 配置此項。",
+      "too many characters": "出於效能原因，已跳過對超長行的標記化。可通過 `editor.maxTokenizationLineLength` 配置此項。"
+    },
+    "vs/platform/extensionManagement/common/abstractExtensionManagementService": {
+      "notFoundCompatibleDependency": "無法安裝“{0}”擴充套件，因為它與當前版本的 {1} 不相容（版本 {2}，VS Code 版本 {3}）。"
+    },
+    "vs/platform/telemetry/common/telemetryService": {
+      "telemetry.docsStatement": "詳細瞭解 [Cursor 的隱私政策]({0})和 [Cursor 的安全政策]({1})。"
+    },
+    "vs/workbench/api/browser/statusBarExtensionPoint": {
+      "text": "要為該條目顯示的文本。可以使用 `$(<name>)` 語法在文本中嵌入圖示，例如 'Hello $(globe)!'"
+    },
+    "vs/workbench/browser/workbench.contribution": {
+      "workbench.editor.editorActionsLocation.titleBar": "在視窗標題欄中顯示編輯器操作。",
+      "navigationControlEnabled": "控制是否在標題欄中顯示導航控制元件。",
+      "layoutControlEnabled": "控制是否在標題欄中顯示佈局控制元件。",
+      "window.commandCenter": "將命令啟動器與視窗標題一起顯示。",
+      "window.menuBarVisibility.compact": "選單在邊欄中顯示為緊湊按鈕。當 {0} 為 {1} 時，將忽略此值。"
+    },
+    "vs/workbench/contrib/comments/browser/commentsAccessibility": {
+      "escape": "- 關閉註釋 (Escape)"
+    },
+    "vs/workbench/contrib/files/browser/files.contribution": {
+      "explorer.autoRevealExclude.when": "對匹配檔案的同級檔案進行額外檢查。使用 $(basename) 作為匹配檔名的變數。"
+    },
+    "vs/workbench/contrib/mcp/common/mcpRegistry": {
+      "mcp.trust.details": "{0} 從 {1}（`{2}`）發現了模型上下文協議 (MCP) 伺服器。{0} 可以在 Chat 中使用它們的功能。\n\n是否允許執行來自 {3} 的 MCP 伺服器？"
+    },
+    "vs/workbench/contrib/notebook/browser/contrib/cellDiagnostics/diagnosticCellStatusBarContrib": {
+      "notebook.cell.status.diagnostic": "快速操作 {0}"
+    },
+    "vs/workbench/contrib/scm/browser/scmHistoryViewPane": {
+      "scmGraphViewOutdated": "請使用重新整理操作（$(refresh)）重新整理此圖表。"
+    },
+    "vs/workbench/contrib/share/browser/share.contribution": {
+      "experimental.share.enabled": "控制是否啟用實驗性的“共享”命令。"
+    },
+    "vs/workbench/contrib/tasks/browser/taskQuickPick": {
+      "TaskQuickPick.changeSettingsOptions": "$(gear) 已關閉 {0} 任務檢測。啟用 {1} 任務檢測..."
+    },
+    "vs/workbench/contrib/terminalContrib/suggest/common/terminalSuggestConfiguration": {
+      "suggest.enabled": "在受支援的 shell（{0}）中啟用終端智慧感知建議（預覽），前提是將 {1} 設定為 {2}。"
+    },
+    "vs/workbench/services/auxiliaryWindow/browser/auxiliaryWindowService": {
+      "unableToOpenWindowDetail": "為避免此問題再次發生，請確保允許此網站的彈出視窗。"
+    },
+    "vs/workbench/services/textfile/browser/textFileService": {
+      "fileBinaryError": "{0}"
+    }
+  }
 }

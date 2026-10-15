@@ -1,0 +1,10 @@
+{
+  "$comment": "Backports missing from the pinned vscode-loc snapshot (engine 1.128.0).",
+  "version": "1.0.0",
+  "contents": {
+    "": {
+      "microsoft-authentication.implementation.description": "用於登入 Microsoft 帳戶的身份驗證實作。\n\n*注意：`classic` 實作已棄用，將在未來版本中隨此設定一併移除。如果只有 `classic` 實作可用，請[提交問題](command:workbench.action.openIssueReporter)並說明你要登入的內容。*",
+      "microsoft-authentication.implementation.enumDescriptions.classic": "（已棄用）使用傳統身份驗證流程登入 Microsoft 帳戶。"
+    }
+  }
+}

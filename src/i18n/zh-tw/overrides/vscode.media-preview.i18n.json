@@ -1,0 +1,9 @@
+{
+  "$comment": "Backport missing from the pinned vscode-loc snapshot (engine 1.128.0).",
+  "version": "1.0.0",
+  "contents": {
+    "": {
+      "command.saveImageAs": "另存新檔..."
+    }
+  }
+}
