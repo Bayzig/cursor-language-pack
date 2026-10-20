@@ -217,7 +217,13 @@ const BARE_LABELS = [
   'Search...',
   'New Project',
   'Projects',
-  'Automate repetitive tasks with always-on agents and configure Cursor\'s built-in agents for your team.'
+  'Automate repetitive tasks with always-on agents and configure Cursor\'s built-in agents for your team.',
+  'Show status filters',
+  'Show PR filters',
+  'Show environment filters',
+  'Sidebar filters',
+  'Hide Sidebar',
+  'Show Sidebar'
 ];
 
 /** Fragments inside template literals. The translation is the dictionary value. */
@@ -251,8 +257,17 @@ const PHRASES = [
   'LABEL="New Chat"',
   'pageTitle:"Automations"',
   'e7a="New Chat"',
-  'MUd="New Chat"'
+  'MUd="New Chat"',
+  '{value:"source",label:"Source",icon:"arrow-bracket-to-right"}'
 ];
+
+/**
+ * Agents sidebar “Source” means 来源. The same word on a file tab means the
+ * raw view, so it cannot be a plain `label:"Source"` replacement.
+ * The minified binding between these two fields changes between builds.
+ */
+const SOURCE_FILTER_KEY = 'contentLabel:"Show source filters",label:"Source"';
+const SOURCE_FILTER_RE = /contentLabel:"Show source filters",deviates:([A-Za-z_$][\w$]*),label:"Source"/g;
 
 const NAV_RE = /(?:"([A-Za-z0-9-]+)"|([A-Za-z_$][\w$]*)):"((?:\\.|[^"\\])*)"/g;
 
@@ -270,6 +285,13 @@ export function rewrite(source, dict) {
     if (translated === null) return full;
     count++;
     return `${field}:"${translated}"`;
+  });
+
+  text = text.replace(/"aria-label"\s*:\s*"((?:\\.|[^"\\])*)"/g, (full, raw) => {
+    const translated = translateLiteral(raw, dict, hits);
+    if (translated === null) return full;
+    count++;
+    return `"aria-label":"${translated}"`;
   });
 
   NAV_RE.lastIndex = 0;
@@ -330,6 +352,16 @@ export function rewrite(source, dict) {
     count += n;
     hits.set(english, (hits.get(english) || 0) + n);
     text = text.split(english).join(translated);
+  }
+
+  const sourceFilter = dict[SOURCE_FILTER_KEY];
+  if (typeof sourceFilter === 'string' && sourceFilter !== SOURCE_FILTER_KEY && sourceFilter.includes('",label:"')) {
+    SOURCE_FILTER_RE.lastIndex = 0;
+    text = text.replace(SOURCE_FILTER_RE, (full, binding) => {
+      count++;
+      hits.set(SOURCE_FILTER_KEY, (hits.get(SOURCE_FILTER_KEY) || 0) + 1);
+      return sourceFilter.replace('",label:"', `",deviates:${binding},label:"`);
+    });
   }
 
   return { text, count, hits };
@@ -521,7 +553,7 @@ function conflictingPacks(dir, localeId) {
 
 function selfTest() {
   const sample = [
-    'keep({label:"Sign In",title:"General",id:"Sign In",children:"Open",note:"Sign In please"})',
+    'keep({label:"Sign In",title:"General",id:"Sign In",children:"Open","aria-label":"Sign In",note:"Sign In please"})',
     'skip("Sign In")',
     'quoted({description:"Say \\"hi\\""})',
     'logic(new Set(["Archived"]))',
@@ -553,6 +585,7 @@ function selfTest() {
     text.includes('label:"登录"'),
     text.includes('title:"通用"'),
     text.includes('id:"Sign In"'),
+    text.includes('"aria-label":"登录"'),
     text.includes('note:"Sign In please"'),
     text.includes('children:"打开"'),
     text.includes('skip("Sign In")'),
@@ -569,10 +602,25 @@ function selfTest() {
     text.includes('agent:"智能体"'),
     text.includes('background:"云端"'),
     text.includes('triage:"分诊"'),
-    count === 15
+    count === 16
   ];
+  const sourceSample = [
+    '{value:"raw",label:"Source",ariaLabel:"Source"}',
+    '{value:"source",label:"Source",icon:"arrow-bracket-to-right"}',
+    'van({contentLabel:"Show source filters",deviates:mn,label:"Source"})'
+  ].join('\n');
+  const source = rewrite(sourceSample, {
+    '{value:"source",label:"Source",icon:"arrow-bracket-to-right"}': '{value:"source",label:"来源",icon:"arrow-bracket-to-right"}',
+    'contentLabel:"Show source filters",label:"Source"': 'contentLabel:"显示来源筛选",label:"来源"'
+  });
+  expect.push(
+    source.text.includes('{value:"raw",label:"Source",ariaLabel:"Source"}'),
+    source.text.includes('{value:"source",label:"来源",icon:"arrow-bracket-to-right"}'),
+    source.text.includes('contentLabel:"显示来源筛选",deviates:mn,label:"来源"'),
+    source.count === 2
+  );
   if (expect.some((ok) => !ok)) {
-    fail(`self-test failed\n${text}`);
+    fail(`self-test failed\n${text}\n${source.text}`);
   }
   log.ok('self-test ok');
   process.exit(0);

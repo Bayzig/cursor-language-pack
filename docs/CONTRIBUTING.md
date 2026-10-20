@@ -2,8 +2,8 @@
 
 Translation fixes, new languages and terminology proposals are welcome.
 
-Install / usage: [README.md](README.md) · [README.zh-CN.md](README.zh-CN.md).
-Docs index: [docs/README.md](docs/README.md).
+Install / usage: [README.md](../README.md) (简体中文) · [README.en.md](README.en.md) (English).
+Docs index: [README.md](README.md).
 
 ## Setup
 
@@ -101,7 +101,7 @@ Read **orphaned authored keys first** — often keys *moved* (new module path), 
 
 Then `npm run sync`, `npm run gap`, `npm run coverage`, add the version to `target.verifiedCursorVersions`, bump `version`.
 
-Publishing: [docs/publishing.md](docs/publishing.md) · [docs/publishing.zh-CN.md](docs/publishing.zh-CN.md) · [AGENTS.md](AGENTS.md).
+Publishing: [publishing.md](publishing.md) · [publishing.zh-CN.md](publishing.zh-CN.md) · [AGENTS.md](../AGENTS.md).
 
 ## Reporting issues
 

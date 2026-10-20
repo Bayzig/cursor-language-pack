@@ -2,7 +2,7 @@
 
 Persistent instructions for coding agents. Human docs: [README.md](README.md),
 [docs/publishing.md](docs/publishing.md) /
-[docs/publishing.zh-CN.md](docs/publishing.zh-CN.md), [CONTRIBUTING.md](CONTRIBUTING.md).
+[docs/publishing.zh-CN.md](docs/publishing.zh-CN.md), [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 Hardcoded UI (Settings, Agent window, account) is `scripts/translate-install.mjs`
 (`npm run translate`) plus `src/i18n/<locale>/hardcoded.json`. Leave that
@@ -60,3 +60,7 @@ the build will filter them.
 - Open VSX (Cursor gallery): https://open-vsx.org/extension/polang233/cursor-language-pack
 - VS Marketplace: https://marketplace.visualstudio.com/items?itemName=polang233.cursor-language-pack (optional)
 - Store page body: `src/marketplace/README.md` (copied into the `.vsix`)
+
+## 提交说明
+
+用简短中文写提交说明，说清为什么改。不要写成长段英文。

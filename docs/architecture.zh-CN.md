@@ -1,6 +1,6 @@
 # 架构说明
 
-Cursor Language Pack 的技术设计文档。安装与日常使用见 [README.zh-CN.md](../README.zh-CN.md)。
+Cursor Language Pack 的技术设计文档。安装与日常使用见 [README.md](../README.md)。
 
 ## 单个自包含扩展
 

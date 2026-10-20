@@ -1,6 +1,6 @@
 # 文档索引
 
-安装与使用见根目录 [README.zh-CN](../README.zh-CN.md) / [README](../README.md)。
+安装与使用见 [README](../README.md)。英文说明见 [README.en.md](README.en.md)。
 本目录下的内容面向贡献者与维护者。
 
 | 文档 | 语言 | 内容 |
@@ -10,9 +10,9 @@
 
 两个不在本目录、但很容易漏掉的地方：
 
-- **新增语言** — [CONTRIBUTING.md](../CONTRIBUTING.md#adding-a-language)。语言列表在 `config.json` 里，不需要改脚本。
-- **全局翻译** — 用户说明在 [README.zh-CN.md](../README.zh-CN.md#全局翻译)。译文在 `src/i18n/<locale>/hardcoded.json`，脚本是 `npm run translate`。
+- **新增语言** — [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-language)。语言列表在 `config.json` 里，不需要改脚本。
+- **全局翻译** — 用户说明在 [README.md](../README.md#全局翻译)。译文在 `src/i18n/<locale>/hardcoded.json`，脚本是 `npm run translate`。
 - **扩展市场页面** — `src/marketplace/README.md`。构建时会复制进 `.vsix`。
 - **给后续 AI 的发布说明** — 根目录 [AGENTS.md](../AGENTS.md)（`OVSX_PAT`、打 tag 发版流程）
 
-贡献流程、译文规则、提 PR 前的检查项：[CONTRIBUTING.md](../CONTRIBUTING.md)。
+贡献流程、译文规则、提 PR 前的检查项：[CONTRIBUTING.md](CONTRIBUTING.md)。

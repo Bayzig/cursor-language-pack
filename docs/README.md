@@ -1,7 +1,7 @@
 # Documentation
 
-Installing and using the pack: root [README.md](../README.md) (English) /
-[README.zh-CN.md](../README.zh-CN.md) (简体中文). Everything here is for contributors and maintainers.
+Installing and using the pack: [README.md](../README.md) (简体中文) /
+[README.en.md](README.en.md) (English). Everything here is for contributors and maintainers.
 
 | Document | Language | What it covers |
 | --- | --- | --- |
@@ -10,9 +10,9 @@ Installing and using the pack: root [README.md](../README.md) (English) /
 
 Also outside this folder:
 
-- **Adding a language** — [CONTRIBUTING.md](../CONTRIBUTING.md#adding-a-language)
-- **Full translation** — user steps in [README.en.md](../README.en.md#full-translation). Strings live in `src/i18n/<locale>/hardcoded.json`; the command is `npm run translate`.
+- **Adding a language** — [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-language)
+- **Full translation** — user steps in [README.en.md](README.en.md#full-translation). Strings live in `src/i18n/<locale>/hardcoded.json`; the command is `npm run translate`.
 - **Extension marketplace page** — `src/marketplace/README.md` (copied into the `.vsix`)
 - **Agent / release notes** — root [AGENTS.md](../AGENTS.md) (`OVSX_PAT`, tag-and-push flow)
 
-Contributor workflow: [CONTRIBUTING.md](../CONTRIBUTING.md).
+Contributor workflow: [CONTRIBUTING.md](CONTRIBUTING.md).

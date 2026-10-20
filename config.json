@@ -4,7 +4,7 @@
   "publisher": "polang233",
   "$publisher": "Must match the Open VSX namespace (Cursor's in-app search) and the VS Marketplace publisher id if we also publish there.",
   "namePrefix": "cursor-language-pack",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "repository": "https://github.com/polang233/cursor-language-pack",
   "homepage": "https://github.com/polang233/cursor-language-pack#readme",
@@ -138,7 +138,7 @@
       "enabled": false
     }
   ],
-  "$locales": "Every language microsoft/vscode-loc ships is listed here; only the enabled ones are built. To contribute a language, create src/i18n/<id>/ (see CONTRIBUTING.md) and flip `enabled` to true — no script changes needed. For a language vscode-loc does not cover, add an entry with upstreamPackDir set to null: the workbench then stays English and only the Cursor strings are translated.",
+  "$locales": "Every language microsoft/vscode-loc ships is listed here; only the enabled ones are built. To contribute a language, create src/i18n/<id>/ (see docs/CONTRIBUTING.md) and flip `enabled` to true — no script changes needed. For a language vscode-loc does not cover, add an entry with upstreamPackDir set to null: the workbench then stays English and only the Cursor strings are translated.",
 
   "modes": {
     "full": {

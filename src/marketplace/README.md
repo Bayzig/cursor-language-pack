@@ -41,4 +41,4 @@ MIT. 工作台译文来自 MIT 许可的 [microsoft/vscode-loc](https://github.c
 
 社区项目，与 Anysphere、Microsoft 无隶属关系。
 
-文档: [English](https://github.com/polang233/cursor-language-pack#readme) · [简体中文](https://github.com/polang233/cursor-language-pack/blob/main/README.zh-CN.md)
+文档: [English](https://github.com/polang233/cursor-language-pack/blob/main/docs/README.en.md) · [简体中文](https://github.com/polang233/cursor-language-pack#readme)
