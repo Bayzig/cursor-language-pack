@@ -1,0 +1,128 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/platform/airlock/common/airlock": {
+      "airlock.disabled": "隔離艙僅在 SpaceX 模式下可用。",
+      "airlock.invalid": "這臺電腦上 IT 的隔離艙設定無法使用：{0}",
+      "airlock.signedOut": "請使用 SpaceX 帳戶登入，才能使用隔離艙。",
+      "airlock.unconfigured": "IT 尚未在這臺電腦上設定隔離艙。"
+    },
+    "vs/platform/airlock/common/airlockConfig": {
+      "airlock.policy.containerName": "{0} 必須是容器名：由字母、數字、'_'、'.' 和 '-' 組成，並以字母或數字開頭。",
+      "airlock.policy.containerUser": "{0} 必須是使用者名稱或 id，後面可以跟 ':' 和組。",
+      "airlock.policy.defaultWorkspace": "{0} 必須是容器內的絕對路徑。",
+      "airlock.policy.engine": "{0} 必須是 docker、podman，或絕對路徑。",
+      "airlock.policy.hookPath": "{0} 必須是絕對路徑。",
+      "airlock.policy.required": "未設定 {0}。",
+      "airlock.policy.string": "{0} 必須是字串。",
+      "airlock.policy.timeout": "{0} 必須是大於 0 的秒數。"
+    },
+    "vs/platform/airlock/electron-main/airlockMainService": {
+      "airlock.devContainersSetup": "Cursor 無法讓 Dev Containers 準備好開啟隔離艙：{0}",
+      "airlock.dockerPathConflict": "{1} 中的 {0} 設定把 Dev Containers 指向了與隔離艙不同的容器引擎。請刪除該項，然後重新連線。",
+      "airlock.wrapperNotExe": "Dev Containers 無法執行 IT 的引擎包裝指令碼 {0}。在 Windows 上，隔離艙的引擎必須是 docker、podman 或 .exe。"
+    },
+    "vs/platform/airlock/node/airlockDevContainers": {
+      "airlock.nameConfigInvalid": "Cursor 無法讓 Dev Containers 準備好開啟隔離艙，因為 Dev Containers 裡該容器的設定不是 JSON 物件。請修正或刪除 {0}，然後重試。",
+      "airlock.nameConfigRemoteEnvInvalid": "Cursor 無法讓 Dev Containers 準備好開啟隔離艙，因為 Dev Containers 裡該容器設定中的 remoteEnv 不是 JSON 物件。請修正或刪除 {0}，然後重試。",
+      "airlock.settingsInvalid": "Cursor 無法把 Dev Containers 指向隔離艙的容器引擎，因為 {0} 不是有效的 JSON。請修正後重試。"
+    },
+    "vs/platform/airlock/node/airlockHooks": {
+      "airlock.hook.exitCode": "{0} 鉤子失敗，退出碼為 {1}。",
+      "airlock.hook.failed": "{0} 鉤子失敗：{1}",
+      "airlock.hook.failedToStart": "Cursor 無法執行位於 {1} 的 {0} 鉤子：{2}",
+      "airlock.hook.signal": "{0} 鉤子被 {1} 終止。",
+      "airlock.hook.timedOut": "{0} 鉤子未在 {1} 秒內完成。"
+    },
+    "vs/platform/airlock/node/airlockLifecycle": {
+      "airlock.containerGone": "容器 {0} 已不存在。",
+      "airlock.containerMissing": "容器 {0} 不存在，且 IT 沒有設定用來建立它的鉤子。",
+      "airlock.engineFailed": "“{0} {1}”失敗：{2}",
+      "airlock.engineNotFound": "{0} 不在 PATH 中。",
+      "airlock.engineUnavailable": "{0} 不可用：{1}",
+      "airlock.exitCode": "退出碼 {0}",
+      "airlock.noAnswer": "{0} 秒內沒有響應",
+      "airlock.progress.create": "正在建立容器…",
+      "airlock.progress.inspect": "正在查詢容器 {0}…",
+      "airlock.progress.preAttach": "正在準備容器…",
+      "airlock.progress.restart": "正在重啟容器…",
+      "airlock.progress.resume": "正在恢復容器…",
+      "airlock.progress.serverCheck": "正在檢查 Cursor 伺服器…",
+      "airlock.progress.start": "正在啟動容器…",
+      "airlock.progress.wait": "正在等待容器啟動…",
+      "airlock.progress.waitForEngine": "正在等待 {0}…",
+      "airlock.serverCheckFailed": "Cursor 無法檢查容器 {0} 中的伺服器：{1}",
+      "airlock.serverMissing": "容器 {0} 沒有此版本 Cursor 需要的 Cursor 伺服器（commit {1}，{2}）。請讓 IT 為容器使用者把它放到 ~/{3}/bin/{1}/。",
+      "airlock.startTimeout": "容器 {0} 未在 {1} 秒內啟動（{2}）。",
+      "airlock.stoppedBySignal": "被 {0} 終止"
+    },
+    "vs/platform/spacexMode/electron-main/signInLogMainService": {
+      "signInLog": "登入"
+    },
+    "vs/platform/update/electron-main/updateService.darwin": {
+      "backgroundActivityRequired": "允許 {0} 在後臺執行",
+      "backgroundActivityRequiredDetail": "請允許後臺活動，以便在 {0} 上執行更新程式。macOS 會在 {0} 退出時停止更新安裝程式，因為 {0} 未被允許在後臺執行。",
+      "cancel": "取消(&&C)",
+      "openLoginItemsSettings": "開啟系統設定(&&O)"
+    },
+    "vs/workbench/contrib/airlock/electron-sandbox/airlockAttach": {
+      "airlock.connecting": "正在連線隔離艙",
+      "airlock.devContainersMissing": "Cursor 通過 Dev Containers 擴充套件開啟隔離艙，但該擴充套件未安裝或已關閉。",
+      "airlock.openLog": "開啟日誌",
+      "airlock.reloadWindow": "重新載入視窗",
+      "airlockCanConnect": "此視窗能否開啟 SpaceX 隔離艙"
+    },
+    "vs/workbench/contrib/airlock/electron-sandbox/airlockConnect.contribution": {
+      "airlock.connect": "連線到隔離艙"
+    },
+    "vs/workbench/contrib/automationsEditor/browser/automationsEditor.contribution": {
+      "openAutomationsEditor": "開啟自動化",
+      "saveAutomation": "儲存自動化"
+    },
+    "vs/workbench/contrib/composer/browser/transcript/composerAgentNavigation": {
+      "agentNavigation.subagentNotFound": "找不到子智慧體"
+    },
+    "vs/workbench/contrib/composer/browser/transcript/composerReactPlaneHostRows": {
+      "composer.projectSetupLoading": "正在設定專案"
+    },
+    "vs/workbench/contrib/composer/browser/transcript/ComposerReactTranscriptRoot.react": {
+      "composer.transcript.regionLabel": "對話記錄"
+    },
+    "vs/workbench/contrib/composer/browser/transcript/transcriptLinkAddToChat": {
+      "glass.addToChat.ignoredFile": "Cursor 忽略了 {0}，因此無法加入對話。"
+    },
+    "vs/workbench/contrib/extensions/electron-sandbox/extensionMonitor.contribution": {
+      "extensionHostHeapSnapshotEnabled": "當本地擴充套件主機的記憶體用量達到上限的四分之三時，為每個主機寫一份堆快照。快照儲存在除錯資料資料夾中，並在你用堆快照捕獲除錯資料時附上。寫入快照會讓擴充套件暫停幾秒或更久。此更改只對之後啟動的擴充套件主機生效。"
+    },
+    "vs/workbench/contrib/remote/common/remote.contribution": {
+      "remote.autoForwardPorts.policyDescription": "自動轉發遠端視窗（包括開發容器）中新程序監聽的埠。設為 false 時，新的監聽埠不會自動轉發，但擴充套件和已開啟的 URL 仍可轉發埠。"
+    },
+    "vs/workbench/contrib/remote/common/spaceXModeRemoteDefaults": {
+      "spaceXMode": "SpaceX 模式"
+    },
+    "vs/workbench/contrib/tracing/electron-sandbox/tracing.contribution": {
+      "captureDebuggingDataAgentHostHeapSnapshots": "智慧體主機堆快照",
+      "captureDebuggingDataAgentHostHeapSnapshotsDetail": "附加智慧體主機在最近一天內、記憶體接近上限時儲存的堆快照。其中可能包含程式碼、提示詞和附加檔案。"
+    },
+    "vs/workbench/electron-sandbox/actions/developerActions.cursor": {
+      "devWaitForSlashMenuSourcesForTesting": "開發：等待斜槓選單來源（測試用）"
+    },
+    "vs/workbench/services/agentData/common/projectAgentHeader": {
+      "teammateProjectWorker.refused": "只有啟動此智慧體的隊友可以開啟它。"
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursor.airlock.containerName": "SpaceX 模式開啟時，Cursor 準備並開啟的本地 Docker 或 Podman 容器名稱（由裝置管理設定）。隔離艙必需。",
+      "cursor.airlock.containerStatusHook": "以 JSON 報告隔離艙容器狀態的指令碼的絕對路徑（由裝置管理設定）。",
+      "cursor.airlock.containerUser": "Cursor 在隔離艙容器內使用的使用者（由裝置管理設定）。為空時，Cursor 使用容器的預設使用者。",
+      "cursor.airlock.createContainerHook": "隔離艙容器不存在時用來建立它的指令碼的絕對路徑（由裝置管理設定）。",
+      "cursor.airlock.defaultWorkspace": "Cursor 在隔離艙容器內開啟的資料夾的絕對路徑（由裝置管理設定）。隔離艙必需。",
+      "cursor.airlock.engine": "隔離艙的容器引擎命令（由裝置管理設定）：docker、podman、二者之一的絕對路徑，或用於執行每條引擎命令的包裝指令碼的絕對路徑。為空時，Cursor 使用 docker。",
+      "cursor.airlock.hookTimeoutSeconds": "Cursor 允許每個隔離艙鉤子指令碼執行、並等待容器啟動的秒數，超時後放棄（由裝置管理設定）。",
+      "cursor.airlock.preAttachContainerHook": "每次開啟隔離艙容器之前，Cursor 要執行的指令碼的絕對路徑（由裝置管理設定）。",
+      "cursor.airlock.restartContainerHook": "用來重啟隔離艙容器的指令碼的絕對路徑（由裝置管理設定）。為空時，Cursor 執行引擎自帶的重啟命令。",
+      "cursor.airlock.startContainerHook": "隔離艙容器未執行時用來啟動它的指令碼的絕對路徑（由裝置管理設定）。為空時，Cursor 執行引擎自帶的啟動命令。",
+      "cursor.deploymentId": "通過裝置管理（MDM）設為某個部署 ID 後，Cursor 只會連線該部署，且無法切換。此版本不支援的 ID 會阻止登入。0 或未設定表示預設服務。",
+      "cursorAirlockConfigurationTitle": "SpaceX 隔離艙"
+    }
+  }
+}
