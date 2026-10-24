@@ -7,7 +7,7 @@
 
 **Cursor 的多语言工具包（汉化 / 中文翻译）。** 目前支持简体中文和繁体中文。
 
-VS Code 的语言插件在 Cursor 里无法正确使用。安装本插件，可以把原本属于 VS Code 的界面都翻译成中文。如果还想把其余地方也翻译掉，再用仓库里的工具。
+安装本插件，可以把编辑器界面翻译成中文。设置页、智能体和账号页的部分文案需要运行下方的一键安装命令。
 
 ## 只汉化 VS Code 部分
 
@@ -21,7 +21,13 @@ VS Code 的语言插件在 Cursor 里无法正确使用。安装本插件，可�
 
 ## 全局翻译
 
-设置页、智能体窗口、账号页的英文在程序文件里，扩展改不到。完全退出 Cursor，按 [README 的命令行安装说明](https://github.com/polang233/cursor-language-pack#readme) 操作，再重新打开。Cursor 更新后重跑安装命令。
+完全退出 Cursor，在终端运行：
+
+```bash
+npx @polang233/cursor-language-pack@latest
+```
+
+推荐 Node.js 22+，最低 18.17。系统语言为 TW/HK/MO 或 zh-Hant 时默认繁体，其他默认简体。追加 `--locale=zh-cn` 或 `--locale=zh-tw` 可手动切换。安装后重新打开 Cursor，应用更新后重跑命令。[更多命令](https://github.com/polang233/cursor-language-pack#readme)。
 
 ## 其他语言 / Other languages
 
