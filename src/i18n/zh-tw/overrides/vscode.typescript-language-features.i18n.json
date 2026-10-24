@@ -1,8 +1,8 @@
 {
-  "$comment": "Backport missing from the pinned vscode-loc snapshot (engine 1.128.0).",
+  "$comment": "Package-manifest translations supplementing the pinned vscode-loc baseline. package.nls.json keys belong in contents.package.",
   "version": "1.0.0",
   "contents": {
-    "": {
+    "package": {
       "typescript.reselectNodeVersion": "設定自訂 Node 路徑偏好",
       "configuration.tsserver.experimental.useBundledNode": "使用隨附的 Node.js 執行階段來執行 TypeScript 伺服器。停用時，使用 Electron 的 Node.js 執行階段。透過 `typescript.tsserver.nodePath` 設定的自訂 Node.js 路徑會覆蓋此設定。",
       "configuration.tsserver.experimental.useBundledNode.unifiedDeprecationMessage": "此設定已棄用。請改用 `#js/ts.tsserver.experimental.useBundledNode#`。",

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Extracts the localizable surface of the locally installed Cursor build into
- * `metadata/cursor.json`. That file is the ground truth used by `build` (to drop
+ * `metadata/cursor.json`, including built-in package and shipped l10n sources.
+ * That file is the ground truth used by `build` (to drop
  * keys that do not exist) and by `coverage` (as the denominator).
  *
  * Two NLS layouts are supported:
@@ -100,11 +101,24 @@ for (const ext of listBuiltinExtensions(found.appRoot)) {
       strings[k] = typeof v === 'string' ? v : (v?.message ?? '');
     }
   }
+  const manifest = readJson(ext.manifest);
+  const bundleCandidates = [...new Set([
+    path.resolve(ext.dir, typeof manifest.l10n === 'string' ? manifest.l10n : 'l10n', 'bundle.l10n.json'),
+    path.join(ext.dir, 'bundle.l10n.json')
+  ])];
+  const bundleFile = bundleCandidates.find((candidate) => fs.existsSync(candidate));
+  const l10nBundle = bundleFile ? readJson(bundleFile) : {};
+  if (!l10nBundle || typeof l10nBundle !== 'object' || Array.isArray(l10nBundle)) {
+    fail(`Invalid l10n bundle: ${bundleFile}`);
+  }
   extensions[ext.id] = {
     folder: ext.folder,
     version: ext.version ?? null,
     packageNlsKeyCount: Object.keys(strings).length,
-    packageNls: strings
+    packageNls: strings,
+    l10nBundle,
+    l10nBundleKeyCount: Object.keys(l10nBundle).length,
+    l10nBundleFile: bundleFile ? path.relative(ext.dir, bundleFile) : null
   };
 }
 

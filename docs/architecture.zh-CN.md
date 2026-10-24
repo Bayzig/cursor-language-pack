@@ -99,7 +99,7 @@ Cursor 设置页、Agent 窗口和账号页有一批英文直接写在这些文�
 - `out/vs/workbench/workbench.glass.main.js`
 - `out/vs/workbench/workbench.anysphere-ui-automations.js`
 
-`npm run translate` 按 `src/i18n/<locale>/hardcoded.json` 改写它们：整段对上界面字段（`label`、`description`、`title`、`children` 等）、设置侧栏名称，或少数整句标题时才替换，然后更新 `product.json` 里对应的安装校验。原文备份在用户数据目录的 `cursor-language-pack/backup/`。这些译文不进 `.vsix`。Cursor 更新会盖掉改写。
+`npm run translate` 按 `src/i18n/<locale>/hardcoded.json` 改写它们：整段对上界面字段（`label`、`description`、`title`、`children` 等）、设置侧栏名称，或少数整句标题时才替换，然后更新 `product.json` 里对应的安装校验。原文和恢复记录按安装路径、应用版本保存在用户数据目录的 `cursor-language-pack/installs/<install>/<build>/`。重复安装和切换语言都从校验后的原文重新生成。这些译文不进 `.vsix`。Cursor 更新会盖掉改写。
 
 ## 运行时
 

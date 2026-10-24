@@ -95,9 +95,13 @@ Partial translations are fine — missing keys fall back to English.
 ```bash
 npm run check-upgrade
 # or: npm run check-upgrade -- --force
+# repeat a comparison against a preserved snapshot:
+npm run check-upgrade -- --baseline=reports/baselines/cursor-<version>-<commit>.json
 ```
 
-Read **orphaned authored keys first** — often keys *moved* (new module path), not deleted. Rename the module id in `core*.i18n.json`; do not retranslate. `validate` catches wrong renames.
+Review added/removed keys, `changedKeys` and `movedKeys`. Existing translations still need review when their English source changes. Previous snapshots are archived before extraction; `--baseline` repeats a comparison even when the installed version is already verified. Historical orphaned authored keys are reported separately from keys removed in this upgrade. Reuse translations for confirmed module moves, and keep older-version entries when they are still needed for compatibility.
+
+Hardcoded UI dictionaries are audited separately from NLS metadata. `commerce.json` supplies the credits, top-up and billing messages through the commerce bundle's resource API. Keep ICU arguments such as `{amount}`, plural branches and component tags intact. Run `npm test` and check rewritten application bundles in temporary files before marking an app version verified.
 
 Then `npm run sync`, `npm run gap`, `npm run coverage`, add the version to `target.verifiedCursorVersions`, bump `version`.
 

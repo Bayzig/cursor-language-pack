@@ -1,8 +1,7 @@
 {
-  "name": "cursor-language-pack",
-  "private": true,
-  "version": "1.0.6",
-  "description": "Cursor IDE 中文语言包（汉化）。简体/繁体已发布，其他语言欢迎贡献。",
+  "name": "@polang233/cursor-language-pack",
+  "version": "1.1.0",
+  "description": "Cursor 简体/繁体中文汉化工具，自动选择系统语言，支持一键安装与恢复。",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -22,7 +21,7 @@
     "audit": "node scripts/audit-manifest.mjs",
     "gap": "node scripts/gap.mjs",
     "check-upgrade": "node scripts/check-upgrade.mjs",
-    "test": "node scripts/test-extension.mjs",
+    "test": "node scripts/test-extension.mjs && node --test scripts/test-cli.mjs scripts/test-upgrade.mjs scripts/test-commerce.mjs scripts/test-hardcoded.mjs",
     "sync": "node scripts/sync-upstream.mjs",
     "build": "node scripts/build.mjs",
     "coverage": "node scripts/coverage.mjs",
@@ -32,12 +31,50 @@
     "publish:ovsx": "node scripts/publish.mjs --registry=ovsx",
     "publish:vsce": "node scripts/publish.mjs --registry=vsce",
     "verify": "node scripts/build.mjs && node scripts/validate-dist.mjs && node scripts/coverage.mjs",
-    "clean": "node -e \"for (const d of ['dist','reports']) require('fs').rmSync(d,{recursive:true,force:true})\""
+    "clean": "node -e \"for (const d of ['dist','reports']) require('fs').rmSync(d,{recursive:true,force:true})\"",
+    "prepack": "node scripts/prepare-npm.mjs",
+    "package:npm": "node scripts/package-npm.mjs",
+    "test:cli": "node --test scripts/test-cli.mjs",
+    "test:package": "node scripts/test-package.mjs",
+    "test:upgrade": "node --test scripts/test-upgrade.mjs",
+    "test:commerce": "node --test scripts/test-commerce.mjs",
+    "validate:install": "node scripts/validate-install.mjs"
   },
   "devDependencies": {
     "@vscode/vsce": "3.2.1",
     "opencc-js": "1.4.1",
     "ovsx": "0.10.1"
   },
-  "$devDependencies": "opencc-js is only used by scripts/convert-zh-tw.mjs, which regenerates the zh-tw sources from zh-cn. It is declared so `npm ci` keeps it available."
+  "$devDependencies": "opencc-js is only used by scripts/convert-zh-tw.mjs, which regenerates the zh-tw sources from zh-cn. It is declared so `npm ci` keeps it available.",
+  "bin": {
+    "cursor-language-pack": "bin/cli.mjs"
+  },
+  "files": [
+    "bin/",
+    "scripts/lib/",
+    "scripts/translate-install.mjs",
+    "src/extension/main.cjs",
+    "src/i18n/zh-cn/hardcoded.json",
+    "src/i18n/zh-tw/hardcoded.json",
+    "assets/language-pack.vsix",
+    "config.json",
+    "LICENSE",
+    "NOTICE",
+    "src/i18n/zh-cn/commerce.json",
+    "src/i18n/zh-tw/commerce.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "cursor",
+    "汉化",
+    "中文语言包",
+    "localization",
+    "cli",
+    "chinese",
+    "zh-cn",
+    "zh-tw"
+  ]
 }

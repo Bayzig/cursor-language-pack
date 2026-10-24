@@ -126,7 +126,7 @@ Cursor Settings, the Agent window and the account page keep English literals in:
 - `out/vs/workbench/workbench.glass.main.js`
 - `out/vs/workbench/workbench.anysphere-ui-automations.js`
 
-`npm run translate` rewrites those from `src/i18n/<locale>/hardcoded.json` when the English text is the whole value of a UI field (`label`, `description`, `title`, `children`, and the others named in the script), a Settings sidebar name, or one of a few whole-string labels. It then updates the matching checksum in `product.json`. Originals are copied under `cursor-language-pack/backup/` in the user data folder. None of this goes into the `.vsix`. A Cursor update overwrites it.
+`npm run translate` rewrites those from `src/i18n/<locale>/hardcoded.json` when the English text is the whole value of a UI field (`label`, `description`, `title`, `children`, and the others named in the script), a Settings sidebar name, or one of a few whole-string labels. It then updates the matching checksum in `product.json`. Originals and recovery records are stored under `cursor-language-pack/installs/<install>/<build>/` in the user data folder. Repeated installation and language changes use the verified originals. None of this goes into the `.vsix`. A Cursor update overwrites it.
 
 ## Runtime
 

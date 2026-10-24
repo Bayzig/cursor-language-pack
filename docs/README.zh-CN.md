@@ -1,18 +1,15 @@
 # 文档索引
 
-安装与使用见 [README](../README.md)。英文说明见 [README.en.md](README.en.md)。
-本目录下的内容面向贡献者与维护者。
+安装与使用：[简体中文](../README.md) / [English](README.en.md)。以下内容面向贡献者与维护者：
 
-| 文档 | 语言 | 内容 |
-| --- | --- | --- |
-| [architecture.zh-CN.md](architecture.zh-CN.md) · [EN](architecture.md) | 简体中文 · EN | 为什么做成一个自包含扩展、本地化如何解析、构建流水线、运行时 |
-| [publishing.zh-CN.md](publishing.zh-CN.md) · [EN](publishing.md) | 简体中文 · EN | 发版步骤、`OVSX_PAT` / `VSCE_PAT`、Cursor 升级后再发 |
+| 文档 | 内容 |
+| --- | --- |
+| [npm.md](npm.md) | 源码 CLI 联调、打包脚本、真实 tarball 检查与 npm 首发 |
+| [publishing.zh-CN.md](publishing.zh-CN.md) · [English](publishing.md) | 版本对齐、发布产物、registry 开关与应用升级 |
+| [architecture.zh-CN.md](architecture.zh-CN.md) · [English](architecture.md) | 本地化、构建与扩展运行时 |
+| [贡献指南](CONTRIBUTING.md) | 译文规则与新增语言 |
+| [Cursor 3.27.12 核对](upgrades/cursor-3.27.12.md) | 原文变更、译文范围与验证结果 |
 
-两个不在本目录、但很容易漏掉的地方：
+npm 入口待首次发布后可用。CLI 使用契约见安装 README，维护命令见 [npm.md](npm.md)。
 
-- **新增语言** — [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-language)。语言列表在 `config.json` 里，不需要改脚本。
-- **全局翻译** — 用户说明在 [README.md](../README.md#全局翻译)。译文在 `src/i18n/<locale>/hardcoded.json`，脚本是 `npm run translate`。
-- **扩展市场页面** — `src/marketplace/README.md`。构建时会复制进 `.vsix`。
-- **给后续 AI 的发布说明** — 根目录 [AGENTS.md](../AGENTS.md)（`OVSX_PAT`、打 tag 发版流程）
-
-贡献流程、译文规则、提 PR 前的检查项：[CONTRIBUTING.md](CONTRIBUTING.md)。
+扩展商店正文来自 `src/marketplace/README.md`。代理工作要求见 [AGENTS.md](../AGENTS.md)，发布及远程配置必须有明确授权。

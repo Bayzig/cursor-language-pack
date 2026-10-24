@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/workbench/contrib/composer/browser/promptInput/pathless-video-toast": {
+      "pathlessVideoRejected": "無法附加此影片。請先將其儲存為檔案，再重新附加。",
+      "pathlessDocumentRejected": "無法附加此文件。請先將其儲存為檔案，再重新附加。",
+      "cloudUnsupportedAttachmentRejected": "無法將此檔案附加到雲端智慧體。"
+    },
+    "vs/workbench/services/agentData/browser/queueItemEditSaves": {
+      "queuedMessageUpdateFailed": "更新排隊中的訊息失敗。"
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursorManagedDeploymentConfigurationTitle": "受管理部署",
+      "cursor.deployment.backendUrl": "僅適用於 Cursor Orbit：DeploymentId 指定部署的 API 的 HTTPS 來源，由裝置管理設定。必填。",
+      "cursor.deployment.websiteUrl": "僅適用於 Cursor Orbit：此部署網站的 HTTPS 來源，由裝置管理設定。必填。",
+      "cursor.deployment.issuer": "僅適用於 Cursor Orbit：此部署登入權杖的簽發者，須為與權杖 iss 宣告完全一致的 HTTPS URL，由裝置管理設定。必填。",
+      "cursor.deployment.authorizationEndpoint": "僅適用於 Cursor Orbit：此部署 OAuth 授權端點的 HTTPS URL，由裝置管理設定。必填。",
+      "cursor.deployment.tokenEndpoint": "僅適用於 Cursor Orbit：此部署 OAuth 權杖端點的 HTTPS URL，須與簽發者同源，由裝置管理設定。必填。",
+      "cursor.deployment.revocationEndpoint": "僅適用於 Cursor Orbit：此部署 OAuth 撤銷端點的 HTTPS URL，須與簽發者同源，由裝置管理設定。必填。",
+      "cursor.deployment.clientId": "僅適用於 Cursor Orbit：Cursor 在此部署身分識別提供者中的 OAuth 用戶端 ID，權杖以此作為對象，由裝置管理設定。必填。",
+      "cursor.deployment.emailDomains": "僅適用於 Cursor Orbit：允許登入此部署的帳戶電子郵件網域，以逗號分隔，僅支援完全相符，由裝置管理設定。必填。"
+    },
+    "vs/workbench/services/workspaceConnection/browser/workspaceConnectionService": {
+      "workspaceConnection.reconnectFailedNamed": "重新連線失敗。「{0}」仍未連線。",
+      "workspaceConnection.reconnectGaveUpNamed": "無法重新連線至「{0}」。"
+    }
+  }
+}

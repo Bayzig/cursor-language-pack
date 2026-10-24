@@ -1,107 +1,67 @@
-# Publishing the language pack
+# Publishing Cursor Language Pack
 
-中文说明：[publishing.zh-CN.md](publishing.zh-CN.md)
+[简体中文](publishing.zh-CN.md) · [npm maintenance](npm.md)
 
-| | |
+The planned first npm release is `@polang233/cursor-language-pack@1.1.0`. It has not been published yet. The extension id stays `polang233.cursor-language-pack`.
+
+## Prepare a version
+
+1. If Cursor has updated, reconcile added, removed and moved keys first. See [App upgrades](#app-upgrades).
+2. Align `config.json.version`, `package.json.version`, `package-lock.json.version` and `package-lock.json.packages[""].version`. The npm package name and lockfile names must use the scoped name above. Keep the extension publisher/name unchanged.
+3. With local app metadata available, run the coverage check and all package checks:
+
+```bash
+npm ci
+npm run sync -- --strategy=api
+npm run verify
+npm test
+npm run package:npm
+```
+
+`verify` keeps its existing build, manifest and coverage checks and requires metadata from a local Cursor install. Hosted CI has no app install; it retains manifest validation after packaging. `npm test` includes the existing runtime tests and `test:cli`. `package:npm` builds the current VSIX, prepares bundled assets, runs `npm pack` into `dist/` and validates the real tarball. For optional retesting, `npm run test:package` repeats the same full fixture suite against that version's existing TGZ.
+
+Expected artifacts for each version:
+
+| Artifact | Path |
 | --- | --- |
-| Extension id | `polang233.cursor-language-pack` |
-| Open VSX | https://open-vsx.org/extension/polang233/cursor-language-pack |
-| VS Marketplace | https://marketplace.visualstudio.com/items?itemName=polang233.cursor-language-pack |
-| GitHub Releases | https://github.com/polang233/cursor-language-pack/releases |
+| Extension | `dist/cursor-language-pack-<version>.vsix` |
+| npm package | `dist/polang233-cursor-language-pack-<version>.tgz` |
 
-`config.json` → `publisher` is `polang233`.
+The archive must contain the CLI, its runtime files and translations, and the matching VSIX. Test the installed archive outside the checkout against temporary app/profile fixtures. See [npm.md](npm.md).
 
-## Two registries
+## Release workflow
 
-| | Open VSX (Cursor search) | VS Marketplace (optional) |
+Only commit, tag, push or publish with explicit authorization. An authorized `v<version>` tag runs [release.yml](../.github/workflows/release.yml):
+
+- Check scoped package identity, extension identity, config/package/lock versions and tag.
+- Run `npm ci`, `npm test`, API sync, `package:npm` and manifest validation. `package:npm` includes the full tarball fixture suite.
+- Upload the exact current-version VSIX and TGZ as workflow artifacts and GitHub Release assets. Older files in `dist/` are excluded.
+- Publish to Open VSX when `OVSX_PAT` is available. Publish to VS Marketplace when the optional `VSCE_PAT` is available.
+- Run the separate npm OIDC job only when `NPM_PUBLISH_ENABLED == 'true'` and the event is a tag push or manual dispatch with `publish=true`.
+
+Manual dispatch defaults to `publish=false`. It builds and uploads workflow artifacts without publishing to any registry, including when a tag is selected. Missing extension-registry secrets skip that registry; test, packaging and publishing failures remain failures.
+
+The npm job uses Node 24, checks npm ≥11.5.1, grants job-level `id-token: write` and sets `registry-url: https://registry.npmjs.org`. It publishes the tested TGZ. It skips only after the registry confirms the exact package/version already exists; network errors, non-404 HTTP errors and malformed replies fail the job. A concurrent duplicate publish also fails rather than hiding an error.
+
+npm automation starts disabled. First publication and trusted publisher/variable setup require later explicit user authorization; the user may authorize an agent to complete them. After first publication, configure the package's trusted publisher and then enable the repository variable. Exact owner/repository/workflow fields are in [npm.md](npm.md). Do not configure accounts, secrets, trusted publishers or variables as part of a documentation/CI change.
+
+## Extension registries
+
+| Registry | Identity | Credentials |
 | --- | --- | --- |
-| Token | `OVSX_PAT` | `VSCE_PAT` |
-| Publish | `npm run publish:ovsx` | `npm run publish:vsce` |
-| Create id once | `npx ovsx create-namespace polang233` | publisher `polang233` in the [manage UI](https://marketplace.visualstudio.com/manage) |
+| [Open VSX](https://open-vsx.org/extension/polang233/cursor-language-pack) | `polang233.cursor-language-pack` | `OVSX_PAT` |
+| [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=polang233.cursor-language-pack) | Same extension id; optional listing | `VSCE_PAT` |
 
-Independent accounts. Reuse `polang233` so the id stays `polang233.cursor-language-pack`.
+Open VSX is Cursor's in-app gallery. The workflow retains both registries, with Marketplace optional. Keep tokens in environment variables or repository secrets; never write or print them. The existing `publish:ovsx` and `publish:vsce` commands publish the current-version VSIX. Namespace `polang233` and the Marketplace publisher are separate from the npm scope.
 
-## What the listing is built from
+Store content comes from `src/marketplace/README.md`, `config.json` → `pack.displayName` / `pack.description`, `src/manifest.template.json` → `keywords` and `media/icon.png`. Preserve the extension identity and Chinese search terms.
 
-| Shown as | Source |
-| --- | --- |
-| Page body | [`src/marketplace/README.md`](../src/marketplace/README.md) (copied into the `.vsix`) |
-| Title / short description | `config.json` → `pack.displayName`, `pack.description` |
-| Search keywords | `src/manifest.template.json` → `keywords`, plus packaged locale ids |
-| Icon | [`media/icon.png`](../media/icon.png) |
+## App upgrades
 
-Lead the title and description with 汉化 / 中文翻译. Other languages are contribution-only;
-do not bury the Chinese search terms.
+1. Run `npm run check-upgrade`, `npm run detect` and `npm run extract` against the updated app.
+2. Review added and deleted keys, changed source text and moved module paths. Translate new keys in `src/i18n/zh-cn/`, reuse translations at moved paths and review obsolete keys.
+3. Run `node scripts/convert-zh-tw.mjs` and review the output, preserving Taiwan terminology.
+4. Sync upstream, run `npm run verify`, `npm test`, `npm run package:npm`. Use `npm run test:package` for optional retesting. Check the archive's contents and isolated installation.
+5. Update `target.verifiedCursorVersions`, documentation and all version fields together. After authorization, release npm and VSIX with the same version.
 
-A version number can be published only once. Icon, store copy, and translations all need a bump.
-
-## Every release
-
-1. Same `version` in [`config.json`](../config.json) and [`package.json`](../package.json) (and the lockfile root if npm rewrote it).
-2. Cursor upgrade reconciliation first, if this ships one: [After a Cursor update](#after-a-cursor-update).
-3. `npm run verify` then `npm run package`. Do not tag until a real `.vsix` exists.
-
-### Open VSX (required)
-
-Namespace `polang233` already exists (used by the Kiro pack). You can publish as a
-contributor; verified Owner is separate.
-
-1. Open VSX PAT → `OVSX_PAT` (Access Tokens on [open-vsx.org](https://open-vsx.org/) after GitHub login + Publisher Agreement).
-2. Local:
-
-```powershell
-$env:OVSX_PAT = "<token>"
-npm run publish:ovsx
-```
-
-Dry-run: `npm run publish:ovsx -- --dry-run`.
-
-3. CI: `gh secret set OVSX_PAT --repo polang233/cursor-language-pack`, then tag:
-
-```bash
-git tag v0.1.2
-git push origin main
-git push origin v0.1.2
-```
-
-[`.github/workflows/release.yml`](../.github/workflows/release.yml) packages, attaches the
-Release, and runs `publish:ovsx` when the secret exists. Confirm the **name** only:
-`gh secret list --repo polang233/cursor-language-pack`.
-
-### VS Marketplace (optional)
-
-Already listed. Same bump, then either:
-
-- `VSCE_PAT` in the shell → `npm run publish:vsce`
-- or upload the `.vsix` on the existing **Cursor Language Pack** row ([manage](https://marketplace.visualstudio.com/manage)) — do not click **+ New extension**
-- or set secret `VSCE_PAT`; the same tag workflow also publishes Marketplace when that secret exists
-
-`VSCE_PAT`: Azure DevOps PAT, org **All accessible organizations**, scope **Marketplace → Manage**.
-
-### Tag → CI (preferred once secrets exist)
-
-```bash
-git tag v0.1.2
-git push origin main
-git push origin v0.1.2
-```
-
-Missing `OVSX_PAT` / `VSCE_PAT` skips that registry; the GitHub Release still gets the `.vsix`.
-
-## After a Cursor update
-
-```bash
-npm run check-upgrade
-# add keys in src/i18n/zh-cn/; renamed modules: change the path, do not retranslate
-node scripts/convert-zh-tw.mjs
-npm run sync && npm run verify
-```
-
-Add the Cursor version to `target.verifiedCursorVersions`, update README coverage, bump
-`version`, ship a **new** version. Do not re-upload the old number.
-
-## Tell users
-
-- Uninstall `MS-CEINTL.vscode-language-pack-zh-hans` (and zh-hant) first.
-- After choosing the display language, **restart Cursor**.
-- In Cursor, search **汉化** / **中文语言包** / `polang233.cursor-language-pack`. Indexing can lag Open VSX by a few minutes.
+Tell users to rerun installation after an app update and fully restart the app. `restore` restores only app files; extensions and display language can be changed inside Cursor.

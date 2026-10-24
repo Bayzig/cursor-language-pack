@@ -1,18 +1,15 @@
 # Documentation
 
-Installing and using the pack: [README.md](../README.md) (简体中文) /
-[README.en.md](README.en.md) (English). Everything here is for contributors and maintainers.
+Installation: [简体中文](../README.md) / [English](README.en.md). Contributor and maintainer references:
 
-| Document | Language | What it covers |
-| --- | --- | --- |
-| [architecture.md](architecture.md) · [zh-CN](architecture.zh-CN.md) | EN · 简体中文 | Why one self-contained extension, localization, build, runtime |
-| [publishing.md](publishing.md) · [zh-CN](publishing.zh-CN.md) | EN · 简体中文 | Release steps, `OVSX_PAT` / `VSCE_PAT`, ship again after a Cursor update |
+| Document | Contents |
+| --- | --- |
+| [npm.md](npm.md) | Source CLI tests, package scripts, real-tarball checks and first npm publication |
+| [publishing.md](publishing.md) · [简体中文](publishing.zh-CN.md) | Version alignment, release artifacts, registry gates and app upgrades |
+| [architecture.md](architecture.md) · [简体中文](architecture.zh-CN.md) | Localization, build and extension runtime |
+| [Contributing](CONTRIBUTING.md) | Translation rules and adding a language |
+| [Cursor 3.27.12 audit](upgrades/cursor-3.27.12.md) | Source changes, translation scope and validation |
 
-Also outside this folder:
+The npm entry point is awaiting its first publication. The CLI contract is documented in the installation README; maintenance commands are in [npm.md](npm.md).
 
-- **Adding a language** — [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-language)
-- **Full translation** — user steps in [README.en.md](README.en.md#full-translation). Strings live in `src/i18n/<locale>/hardcoded.json`; the command is `npm run translate`.
-- **Extension marketplace page** — `src/marketplace/README.md` (copied into the `.vsix`)
-- **Agent / release notes** — root [AGENTS.md](../AGENTS.md) (`OVSX_PAT`, tag-and-push flow)
-
-Contributor workflow: [CONTRIBUTING.md](CONTRIBUTING.md).
+The extension store page comes from `src/marketplace/README.md`. Agent instructions are in [AGENTS.md](../AGENTS.md); publishing and remote configuration require explicit authorization.

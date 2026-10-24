@@ -1,8 +1,8 @@
 {
-  "$comment": "Backport missing from the pinned vscode-loc snapshot (engine 1.128.0).",
+  "$comment": "Package-manifest translations supplementing the pinned vscode-loc baseline. package.nls.json keys belong in contents.package.",
   "version": "1.0.0",
   "contents": {
-    "": {
+    "package": {
       "command.saveImageAs": "另存为..."
     }
   }

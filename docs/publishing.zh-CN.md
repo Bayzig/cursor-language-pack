@@ -1,102 +1,67 @@
-# 发布语言包
+# 发布 Cursor Language Pack
 
-英文版：[publishing.md](publishing.md)
+[English](publishing.md) · [npm 维护](npm.md)
 
-| | |
+计划首次发布 `@polang233/cursor-language-pack@1.1.0`，目前尚未发布。扩展 id 仍为 `polang233.cursor-language-pack`。
+
+## 准备版本
+
+1. 若应用已升级，先核对新增、删除和移动的键，见[应用升级](#应用升级)。
+2. 对齐 `config.json.version`、`package.json.version`、`package-lock.json.version` 和 `package-lock.json.packages[""].version`。npm 包名与 lock 中的包名使用上述 scope；扩展 publisher/name 保持原样。
+3. 在已提取本机 Cursor 元数据的环境执行覆盖率和产物检查：
+
+```bash
+npm ci
+npm run sync -- --strategy=api
+npm run verify
+npm test
+npm run package:npm
+```
+
+`verify` 保留原有构建、manifest 与覆盖率检查，需要本机应用元数据。托管 CI 不安装应用，打包后继续执行 manifest 校验。`npm test` 包含现有运行时测试与 `test:cli`。`package:npm` 构建当前 VSIX、准备包内 assets、用 `npm pack` 生成 `dist/*.tgz` 并验证真实 tarball。按需可用 `npm run test:package` 对 dist 中本版本已有的 TGZ 重跑同一套完整 fixture 测试。
+
+每个版本应生成：
+
+| 产物 | 路径 |
 | --- | --- |
-| 扩展 id | `polang233.cursor-language-pack` |
-| Open VSX | https://open-vsx.org/extension/polang233/cursor-language-pack |
-| VS Marketplace | https://marketplace.visualstudio.com/items?itemName=polang233.cursor-language-pack |
-| GitHub Release | https://github.com/polang233/cursor-language-pack/releases |
+| 扩展 | `dist/cursor-language-pack-<version>.vsix` |
+| npm 包 | `dist/polang233-cursor-language-pack-<version>.tgz` |
 
-`config.json` 的 `publisher` 是 `polang233`。
+归档应包含 CLI、所需运行时文件与译文，以及同版本 VSIX。必须在仓库外安装真实 TGZ，用隔离的应用和用户配置 fixture 测试，见 [npm.md](npm.md)。
 
-## 两个市场
+## Release 工作流
 
-| | Open VSX（Cursor 能搜到） | VS Marketplace（可选） |
+提交、打 tag、推送及发布都需要明确授权。经授权推送 `v<version>` tag 后，[release.yml](../.github/workflows/release.yml) 会：
+
+- 校验 scoped npm 包名、扩展身份、config/package/lock 版本和 tag。
+- 执行 `npm ci`、`npm test`、API sync、`package:npm` 和 manifest 校验，package:npm 已包含完整 tarball fixture 测试。
+- 将本版本确定路径的 VSIX 和 TGZ 上传到 workflow artifact 与 GitHub Release，不匹配 dist 中的旧版本。
+- 存在 `OVSX_PAT` 时发布 Open VSX。存在可选的 `VSCE_PAT` 时也发布 VS Marketplace。
+- 仅在 `NPM_PUBLISH_ENABLED == 'true'`，且为 tag push 或手动 `publish=true` 时运行独立的 npm OIDC job。
+
+手动 dispatch 默认 `publish=false`，只构建并上传 workflow artifact，即使选择 tag 也不会发布到任何 registry。缺少扩展市场 secret 时跳过对应市场；测试、打包或发布失败仍然报错。
+
+npm job 使用 Node 24，检查 npm ≥11.5.1，设置 job 级 `id-token: write` 与 `registry-url: https://registry.npmjs.org`，发布已测试的 TGZ。仅在 registry 确认同名同版本已存在时跳过；网络错误、非 404 HTTP 错误和异常响应都会失败。并发导致版本已存在时，发布失败也不会被吞掉。
+
+npm 自动发布初始关闭。首次发布及 trusted publisher、变量配置需要后续明确授权，用户也可授权代理完成。首发后配置每个包的 trusted publisher，最后开启仓库变量。具体 owner、repo 和 workflow 见 [npm.md](npm.md)。文档/CI 修改不包含注册账号、设置 secret、配置 trusted publisher 或开启变量的授权。
+
+## 扩展市场
+
+| 市场 | 身份 | 凭据 |
 | --- | --- | --- |
-| 令牌 | `OVSX_PAT` | `VSCE_PAT` |
-| 发布 | `npm run publish:ovsx` | `npm run publish:vsce` |
-| 一次性创建 id | `npx ovsx create-namespace polang233` | [管理页](https://marketplace.visualstudio.com/manage) 里的出版商 `polang233` |
+| [Open VSX](https://open-vsx.org/extension/polang233/cursor-language-pack) | `polang233.cursor-language-pack` | `OVSX_PAT` |
+| [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=polang233.cursor-language-pack) | 相同扩展 id，可选上架 | `VSCE_PAT` |
 
-两边账号互不相通。尽量用同一个 id，扩展身份就一直是 `polang233.cursor-language-pack`。
+Cursor 内置搜索使用 Open VSX。工作流保留两个市场的逻辑，Marketplace 可选。令牌只放环境变量或仓库 secret，不能写入或打印。现有 `publish:ovsx` / `publish:vsce` 命令发布当前版本 VSIX。Open VSX 的 `polang233` namespace、Marketplace publisher 和 npm scope 互相独立。
 
-## 商店页从哪来
+商店正文来自 `src/marketplace/README.md`，标题与简介来自 `config.json` 的 `pack.displayName` / `pack.description`，关键词来自 `src/manifest.template.json` 的 `keywords`，图标为 `media/icon.png`。保持扩展身份及汉化、中文翻译等搜索词。
 
-| 用户看到的 | 来源 |
-| --- | --- |
-| 正文 | [`src/marketplace/README.md`](../src/marketplace/README.md)，构建时复制进 `.vsix` |
-| 标题、短描述 | `config.json` → `pack.displayName`、`pack.description` |
-| 搜索关键词 | `src/manifest.template.json` → `keywords`，外加打进包里的 locale id |
-| 图标 | [`media/icon.png`](../media/icon.png) |
+## 应用升级
 
-标题和简介以 **汉化 / 中文翻译** 打头，方便中文用户搜到。其他语言靠贡献，不要把搜索词冲淡。
+1. 对更新后的应用运行 `npm run check-upgrade`、`npm run detect`、`npm run extract`。
+2. 核对新增、删除、英文原文变更和移动的键。补齐 `src/i18n/zh-cn/`，移动模块时复用译文，审查过时键。
+3. 运行 `node scripts/convert-zh-tw.mjs` 并检查结果，保留台湾用词。
+4. 同步上游，执行 `npm run verify`、`npm test`、`npm run package:npm`，按需用 `npm run test:package` 复测，核对归档内容和隔离安装。
+5. 更新 `target.verifiedCursorVersions`、文档及所有版本字段。授权后让 npm 包与 VSIX 按相同版本一起发布。
 
-同一个版本号不能发第二次。图标、商店文案、译文改了都要升版本。
-
-## 每次发版
-
-1. [`config.json`](../config.json) 和 [`package.json`](../package.json) 写成同一个 `version`（lockfile 根版本若被 npm 改了也要一起）。
-2. 若这次是 Cursor 升级后的对账，先走 [Cursor 升级后](#cursor-升级后)。
-3. `npm run verify`，再 `npm run package`。没打出 `.vsix` 之前不要打 tag。
-
-### Open VSX（必发）
-
-命名空间 `polang233` 已有（Kiro 包在用），一般可以直接发。Owner / verified 是另一步。
-
-1. [open-vsx.org](https://open-vsx.org/) 用 GitHub 登录、签 Publisher Agreement，建 PAT，这就是 `OVSX_PAT`。
-2. 本机：
-
-```powershell
-$env:OVSX_PAT = "<token>"
-npm run publish:ovsx
-```
-
-试运行：`npm run publish:ovsx -- --dry-run`。
-
-3. CI：`gh secret set OVSX_PAT --repo polang233/cursor-language-pack`，然后打 tag：
-
-```bash
-git tag v0.1.2
-git push origin main
-git push origin v0.1.2
-```
-
-[`.github/workflows/release.yml`](../.github/workflows/release.yml) 会打包、挂 Release，secret 存在时跑 `publish:ovsx`。只核对名字：`gh secret list --repo polang233/cursor-language-pack`。
-
-### VS Marketplace（可选）
-
-已经上过架。同一版本号 bump 之后：
-
-- 本机 `$env:VSCE_PAT = "<token>"; npm run publish:vsce`
-- 或在已有的 **Cursor Language Pack** 那一行上传 `.vsix`（[管理页](https://marketplace.visualstudio.com/manage)），不要点「+ 新延伸」
-- 或设 secret `VSCE_PAT`，同一套 tag 工作流也会发微软商店
-
-`VSCE_PAT`：Azure DevOps PAT，Organization 选 **All accessible organizations**，权限 **Marketplace → Manage**。
-
-### 打 tag 走 CI（secret 齐了之后推荐）
-
-```bash
-git tag v0.1.2
-git push origin main
-git push origin v0.1.2
-```
-
-缺 `OVSX_PAT` / `VSCE_PAT` 就跳过对应商店，GitHub Release 仍会挂上 `.vsix`。
-
-## Cursor 升级后
-
-```bash
-npm run check-upgrade
-# 在 src/i18n/zh-cn/ 里补新键；模块路径变了就改路径，不要重译
-node scripts/convert-zh-tw.mjs
-npm run sync && npm run verify
-```
-
-把 Cursor 版本写进 `target.verifiedCursorVersions`，更新 README 覆盖率，升 `version`，发**新版本**。不要在旧版本号上重传。
-
-## 用户侧可提醒
-
-- 先卸 `MS-CEINTL.vscode-language-pack-zh-hans`（以及繁体官方包）。
-- 选显示语言后必须**重启** Cursor。
-- 在 Cursor 里搜 **汉化**、**中文语言包** 或 `polang233.cursor-language-pack`。索引可能比 Open VSX 公开页再慢几分钟。
+提醒用户在应用更新后重跑安装并完全重启。`restore` 只恢复程序文件；扩展和显示语言在 Cursor 内切换。

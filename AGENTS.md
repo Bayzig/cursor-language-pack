@@ -1,66 +1,62 @@
 # Agent notes (cursor-language-pack)
 
-Persistent instructions for coding agents. Human docs: [README.md](README.md),
-[docs/publishing.md](docs/publishing.md) /
-[docs/publishing.zh-CN.md](docs/publishing.zh-CN.md), [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
+User instructions define the authorized scope. Human docs: [README.md](README.md), [npm maintenance](docs/npm.md), [publishing](docs/publishing.md) / [简体中文](docs/publishing.zh-CN.md).
 
-Hardcoded UI (Settings, Agent window, account) is `scripts/translate-install.mjs`
-(`npm run translate`) plus `src/i18n/<locale>/hardcoded.json`. Leave that
-script as its own implementation.
+## Package and extension contract
 
-## Secrets — never write these to the repo
+- Planned first npm release: `@polang233/cursor-language-pack@1.1.0`. It is not published yet. Keep the pending-first-publication notice in all README copies and related docs until an explicitly authorized first publication succeeds and the registry confirms it. Only then update these notices together.
+- Extension id stays `polang233.cursor-language-pack`. Do not derive its publisher/name from the scoped npm name.
+- `npx @polang233/cursor-language-pack@latest` defaults to `install`. Also support `install/preview/status/restore`, `--locale=zh-cn/zh-tw` and `--dir=path`. Source entry point: `node bin/cli.mjs`.
+- Detect system locale: TW/HK/MO or zh-Hant selects `zh-tw` with the existing Taiwan terminology; everything else selects `zh-cn`.
+- Recommend Node 22+; runtime minimum is 18.17. Bundle this version's VSIX so end users need neither source checkout nor build.
+- After an app update, users rerun install. `restore` restores only app files; the extension and display language can be switched in the app.
 
-| Secret | Where it lives | Used by |
-| --- | --- | --- |
-| `OVSX_PAT` | GitHub Actions secret | `.github/workflows/release.yml` → `npm run publish:ovsx` — **primary gallery** (Cursor search) |
-| `VSCE_PAT` | GitHub Actions secret | optional VS Marketplace publish |
+Hardcoded Settings/Agent/account translation stays in `scripts/translate-install.mjs` and `src/i18n/<locale>/hardcoded.json`. Keep that script as its own implementation.
 
-Do **not** commit tokens, put them in markdown, or print them. Confirm only the
-**name**: `gh secret list`. Do not commit `.cursor/` (local IDE state).
+## Upgrade workflow
 
-Cursor’s in-app search is Open VSX (proxied at `marketplace.cursorapi.com`).
-Publish `ovsx` first. VS Marketplace is optional.
+1. Run `npm run check-upgrade`, `npm run detect` and `npm run extract` against the updated Cursor installation.
+2. Inspect added, deleted and moved keys and changed English text. Translate new keys in `src/i18n/zh-cn/`, reuse translations for moved module paths and review obsolete keys. Do not count filtered-out keys as translated.
+   `check-upgrade` archives the previous metadata under `reports/baselines/` before extraction. Use `--baseline=<snapshot>` to repeat the comparison against an older version. Review `changedKeys` even when a translation already exists; historical orphaned keys are separate from this upgrade's removals.
+3. Run `node scripts/convert-zh-tw.mjs`, inspect the diff and preserve Taiwan terminology.
+4. Update `target.verifiedCursorVersions` and relevant documentation. Keep README, English README and Chinese copies in sync.
+5. Align versions in `config.json`, `package.json`, `package-lock.json` and `package-lock.json.packages[""]`. The scoped npm package and VSIX use the same version; keep package/lock names aligned too.
 
-```powershell
-$env:OVSX_PAT = "<token>"
-npm run package
-npm run publish:ovsx
-```
-
-## Shipping a release
-
-1. Bump **both** `config.json` → `version` and `package.json` / lockfile **root** version (same string).
-2. `npm run verify` against the local Cursor install (`npm run detect`).
-3. Commit, then `git tag v<version>` and push **main + the tag**.
-4. Tag `v*` runs [`.github/workflows/release.yml`](.github/workflows/release.yml): package, GitHub Release, Open VSX if `OVSX_PAT` is set, VS Marketplace if `VSCE_PAT` is set.
-5. Do not tag until `npm run package` produces a real `.vsix`.
-
-Store copy: `src/marketplace/README.md`, `config.json` → `pack.displayName` /
-`pack.description`, `src/manifest.template.json` → `keywords`. Keep Chinese search
-terms (汉化、中文翻译、中文语言包) first; other languages are contribution-only.
-
-## After a Cursor update
+## Required checks
 
 ```bash
-npm run check-upgrade
-# translate new keys in src/i18n/zh-cn/
-node scripts/convert-zh-tw.mjs
-npm run sync && npm run verify
+npm ci
+npm run sync -- --strategy=api
+npm run verify
+npm test
+npm run package:npm
 ```
 
-Add the Cursor version to `config.target.verifiedCursorVersions`, update README
-coverage numbers, bump the pack version, tag, push.
+- `verify` retains the original coverage/build/manifest checks and needs extracted local app metadata.
+- `test:cli` is pure CLI/locale testing; `npm test` includes the existing runtime tests plus `test:cli`.
+- `npm test` also checks upgrade snapshot comparisons, hardcoded card titles and commerce resource injection. `commerce.json` contains ICU messages; preserve named arguments, plural branches and component tags when translating.
+- `package:npm` builds the current VSIX, prepares bundled assets, runs npm pack into dist and validates the actual tarball.
+- For optional retesting, `npm run test:package` retests dist's current-version TGZ. Install it outside the checkout and run the installed CLI against isolated app/profile fixtures. Check archive contents, matching VSIX, locale selection, preview/status/install/repeated install/restore and paths with spaces. Do not touch a real app or user profile.
+- CI runs npm ci, npm test, API sync, package:npm and manifest validation on Windows, macOS and Linux. The package:npm step already runs the full tarball fixture suite. Do not suppress failures or replace archive tests with source-only tests.
 
-Moved keys: rename the **module path**, do not retranslate. Orphans can stay;
-the build will filter them.
+## Release authorization and credentials
 
-## Live product
+Do not commit, tag, push, publish, register namespaces, change remote secrets, configure trusted publishers or enable repository variables without explicit user authorization. A documentation/CI request does not grant release authorization.
 
-- Extension id: `polang233.cursor-language-pack`
-- Open VSX (Cursor gallery): https://open-vsx.org/extension/polang233/cursor-language-pack
-- VS Marketplace: https://marketplace.visualstudio.com/items?itemName=polang233.cursor-language-pack (optional)
-- Store page body: `src/marketplace/README.md` (copied into the `.vsix`)
+| Credential | Storage and use |
+| --- | --- |
+| `OVSX_PAT` | GitHub Actions secret for Open VSX, Cursor's in-app gallery |
+| `VSCE_PAT` | Optional VS Marketplace credential |
+| npm | OIDC trusted publishing; no long-lived publish token |
 
-## 提交说明
+Never write or print tokens. Inspect secret names only. Do not commit `.cursor/` or local IDE state.
 
-用简短中文写提交说明，说清为什么改。不要写成长段英文。
+[release.yml](.github/workflows/release.yml) tests before sync/package and validates manifests; package:npm runs the full real-tarball fixture suite. GitHub Releases attach only the exact current-version VSIX and TGZ. Preserve existing Open VSX and optional VS Marketplace publishing behavior and secret handling.
+
+npm automation is disabled unless `vars.NPM_PUBLISH_ENABLED == 'true'` and the event is a tag push or manual `publish=true`. Manual `publish=false` must never publish to any registry, even when a tag is selected. The npm job uses Node 24, npm ≥11.5.1, `registry-url: https://registry.npmjs.org` and job-level `id-token: write`. Skip an existing version only after confirming the exact package/version; registry/network errors must fail.
+
+First npm publication and remote setup require later explicit user authorization; the user may authorize an agent to perform them. After first publication, bind the package trusted publisher to GitHub owner `polang233`, repository `cursor-language-pack` and `release.yml`, allow `npm publish` and finally enable the variable. See [docs/npm.md](docs/npm.md).
+
+Store body: `src/marketplace/README.md`; title/description: `config.json` → `pack.displayName` / `pack.description`; search terms: `src/manifest.template.json` → `keywords`. Keep Chinese search terms visible.
+
+When a commit is authorized, use a short Chinese message explaining why.

@@ -1,0 +1,15 @@
+# Changelog
+
+## Unreleased — 1.1.0
+
+- Make all built-in manifest translations available in both locales by correcting package override sections and restoring filtered TypeScript/authentication messages. Correct the OCaml labels copied from Julia in Cursor.
+- Validate authored manifest overrides in generated builds and the VSIX inside the npm tarball.
+
+- Adapt translations to Cursor 3.27.12. Add 15 localized strings for attachments, queued messages, managed deployments and named reconnection errors in Simplified and Traditional Chinese.
+- Fill hardcoded UI gaps in queued-message controls, voice settings, network diagnostics, private inference and computer access.
+- Translate the credits and top-up interface through its translation resources, retaining the original message keys and amount placeholders.
+- Extend upgrade checks to detect English text changes, module moves and built-in extension string changes, and retain the previous metadata baseline for review.
+- Add `@polang233/cursor-language-pack` for one-command installation, with the matching VSIX bundled in the npm package.
+- Choose Simplified or Traditional Chinese from the system language, with `--locale` overrides.
+- Support preview, status, repeated installation, language switching and restoring application files from backups in the user profile.
+- Build and test npm and VSIX artifacts together. npm publication is disabled until the publisher is configured.

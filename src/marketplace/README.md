@@ -21,7 +21,7 @@ VS Code 的语言插件在 Cursor 里无法正确使用。安装本插件，可�
 
 ## 全局翻译
 
-设置页、智能体窗口、账号页的英文在程序文件里，扩展改不到。完全退出 Cursor，下载 [仓库](https://github.com/polang233/cursor-language-pack) 后执行 `npm install` 和 `npm run translate`，再打开。Cursor 更新后要再执行一次。
+设置页、智能体窗口、账号页的英文在程序文件里，扩展改不到。完全退出 Cursor，按 [README 的命令行安装说明](https://github.com/polang233/cursor-language-pack#readme) 操作，再重新打开。Cursor 更新后重跑安装命令。
 
 ## 其他语言 / Other languages
 

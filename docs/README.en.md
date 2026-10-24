@@ -1,99 +1,64 @@
 # Cursor Language Pack
 
-A multilingual language pack for Cursor. Simplified Chinese and Traditional Chinese are supported. There are two ways to install. The plugin alone translates only part of the interface. Clone the repo and run the command to translate most of it.
+Chinese translations for Cursor, including the editor, Settings and Agent interface. Supports Simplified Chinese and Traditional Chinese with Taiwan terminology.
 
 [简体中文](../README.md)
 
 <p>
   <img src="../media/icon.png" width="48" height="48" alt="Cursor Language Pack icon" />
   <a href="https://open-vsx.org/extension/polang233/cursor-language-pack"><img src="https://img.shields.io/open-vsx/v/polang233/cursor-language-pack?label=Open%20VSX" alt="Open VSX" /></a>
-  <a href="https://open-vsx.org/extension/polang233/cursor-language-pack"><img src="https://img.shields.io/open-vsx/dt/polang233/cursor-language-pack" alt="Downloads" /></a>
 </p>
 
-<table>
-  <tr>
-    <td width="50%"><img src="../media/settings-zh.png" alt="Settings in Simplified Chinese" /></td>
-    <td width="50%"><img src="../media/settings-en.png" alt="Settings in English" /></td>
-  </tr>
-  <tr>
-    <td colspan="2"><img src="../media/agents-zh.png" alt="Agent sidebar in Simplified Chinese" /></td>
-  </tr>
-</table>
-
-## VS Code only
-
-Install the extension. This stays inside the plugin: menus, files, the editor and the terminal switch language. English compiled into Settings, the Agent window and the account page stays as it is.
-
-1. Uninstall any other language pack. This one replaces the official VS Code pack. Two packs together make the UI flip translations on every restart.
-2. Extensions → search **汉化** or **中文语言包** → Install. Or download a [GitHub Release](https://github.com/polang233/cursor-language-pack/releases) `.vsix` and run **Extensions: Install from VSIX…**. Do not double-click the file on Windows.
-3. Command Palette → **Language Pack: Select Display Language** → pick **中文（简体）** or **中文（繁體）** → **quit Cursor and open it again**. Reload is not enough.
-
-To switch later, restart after either of these:
-
-- Command Palette → **Language Pack: Select Display Language**
-- Setting `cursorLanguagePack.language`: `auto`, `zh-cn`, `zh-tw`, `en`
-
-`en` returns the UI to English. The extension stays installed.
-
-## Full translation
-
-Settings, the Agent window and the account page keep English in the app files. The extension cannot change those. Edit the install, then restart.
-
-Quit Cursor completely. Install Node.js 18, clone this repo, then:
-
-```bash
-npm install
-npm run translate
-```
-
-The script backs up the files, rewrites those strings, updates the install checksum, installs this pack, and sets the display language to Simplified Chinese. Open Cursor again.
-
-Traditional Chinese: `npm run translate -- --locale=zh-tw`. If the install is not found, add `--dir="path"` — the folder that contains `resources/app`. On macOS that is `Cursor.app/Contents`.
-
-A Cursor update wipes the rewrite. Run the command again. Restore only the app files with `npm run translate -- --undo`. The extension and display language stay.
-
-The product name Cursor and the protocol name MCP stay in English.
-
-## Languages
-
-| Locale | Status |
+| Settings in Simplified Chinese | Settings in English |
 | --- | --- |
-| `zh-cn` 简体中文 | Shipped. Workbench 12826/12826 (100%), 1849 own strings (100%), plus 1696 compiled strings |
-| `zh-tw` 繁體中文 | Shipped. Same numbers as Simplified Chinese |
-| `ja` `ko` `fr` `de` `es` `it` `ru` `pt-br` `tr` `pl` `cs` | Reserved, no translations yet |
+| ![Simplified Chinese](../media/settings-zh.png) | ![English](../media/settings-en.png) |
 
-One extension holds every enabled locale. The compiled strings change only after the command above. Anything not translated stays English.
+![Agent sidebar in Simplified Chinese](../media/agents-zh.png)
 
-The current translation matches Cursor **3.26.16**. Older versions generally work. On newer versions, newly added text stays English until we translate it.
+## Command-line installation
 
-### Adding a language
+Node.js 22+ is recommended; the minimum is 18.17. Quit Cursor completely first.
 
-1. Set `enabled: true` for that locale in `config.json`.
-2. Add `src/i18n/<locale>/`: glossary first, then translations under `cursor/`.
-3. For the full translation, add `hardcoded.json`. Copy `src/i18n/zh-cn/hardcoded.json` and translate the values. `npm run translate -- --locale=<locale>` reads that file.
-4. `npm run build && npm run validate && npm run coverage`.
-
-Details: [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-language).
-
-## Development
-
-Node.js 18.17+.
+The npm package is awaiting its first publication; these npx commands become available then.
 
 ```bash
-npm install
-npm run detect
-npm run extract
-npm run sync
-npm run verify
-npm run package
-npm run translate -- --preview
-npm run check-upgrade
+npx @polang233/cursor-language-pack@latest
 ```
 
-Docs: [architecture](architecture.md) · [contributing](CONTRIBUTING.md) · [publishing](publishing.md)
+The default command is `install`. It installs the language pack and translates text in the app files. Each npm version includes its matching VSIX, so users do not need to download or build the source. To specify the language and install directory:
 
-## License
+```bash
+npx @polang233/cursor-language-pack@latest --locale=zh-tw --dir="path/to/install"
+```
 
-MIT. Workbench strings come from [microsoft/vscode-loc](https://github.com/microsoft/vscode-loc); see [NOTICE](../NOTICE).
+| Subcommand | Purpose |
+| --- | --- |
+| `preview` | Preview changes |
+| `status` | Report the current state |
+| `restore` | Restore only the app files |
 
-Not affiliated with Anysphere or Microsoft.
+System locales with TW/HK/MO or zh-Hant select `zh-tw` with Taiwan terminology; all others select `zh-cn`. Override this with `--locale`. `--dir` selects the install directory containing `resources/app`, or `Cursor.app/Contents` on macOS.
+
+Reopen Cursor after installation. Rerun the install command after an app update. Switch extensions and display language inside the app; `restore` does not uninstall the extension or reset the display language.
+
+Test the source entry point from the repository. See [npm maintenance](npm.md) for preparation:
+
+```bash
+node bin/cli.mjs preview --locale=zh-tw
+```
+
+## Extension installation
+
+1. Uninstall other language packs to avoid conflicts with the official VS Code Chinese packs.
+2. Search Extensions for **Cursor Language Pack** or **汉化**, or download a VSIX from [GitHub Releases](https://github.com/polang233/cursor-language-pack/releases) and use **Extensions: Install from VSIX…**.
+3. Run **Language Pack: Select Display Language**, choose Simplified or Traditional Chinese, then quit Cursor completely and reopen it.
+
+The extension id remains `polang233.cursor-language-pack`. The setting `cursorLanguagePack.language` also accepts `auto`, `zh-cn`, `zh-tw` and `en`; restart after changing it. Translating some text compiled into the app requires the command-line installation above.
+
+The translations target Cursor **3.27.12**. New or untranslated text stays in English. Names such as Cursor and MCP stay in English.
+
+## Development and license
+
+[Maintenance and source tests](npm.md) · [Publishing](publishing.md) · [Architecture](architecture.md) · [Contributing](CONTRIBUTING.md)
+
+MIT. Workbench translations come from [microsoft/vscode-loc](https://github.com/microsoft/vscode-loc); see [NOTICE](../NOTICE). A community project, unaffiliated with Anysphere or Microsoft.
