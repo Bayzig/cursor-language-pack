@@ -1,6 +1,12 @@
 # Changelog
 
-## Unreleased — 1.1.0
+## 1.1.1 — 2026-10-25
+
+- Replace first-publication notices with working npm instructions and document both locale overrides.
+- Add public-registry and actual npx installation checks for automatic locale selection, manual language switching and restore.
+- Enable the authorized GitHub Actions trusted publisher and verify public npx installs on Windows, macOS and Linux after each npm release.
+
+## 1.1.0 — 2026-10-25
 
 - Make all built-in manifest translations available in both locales by correcting package override sections and restoring filtered TypeScript/authentication messages. Correct the OCaml labels copied from Julia in Cursor.
 - Validate authored manifest overrides in generated builds and the VSIX inside the npm tarball.

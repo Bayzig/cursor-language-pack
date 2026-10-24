@@ -1,6 +1,6 @@
 {
   "name": "@polang233/cursor-language-pack",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Cursor 简体/繁体中文汉化工具，自动选择系统语言，支持一键安装与恢复。",
   "type": "module",
   "license": "MIT",
@@ -38,7 +38,8 @@
     "test:package": "node scripts/test-package.mjs",
     "test:upgrade": "node --test scripts/test-upgrade.mjs",
     "test:commerce": "node --test scripts/test-commerce.mjs",
-    "validate:install": "node scripts/validate-install.mjs"
+    "validate:install": "node scripts/validate-install.mjs",
+    "test:published": "node scripts/test-package.mjs --published"
   },
   "devDependencies": {
     "@vscode/vsce": "3.2.1",
