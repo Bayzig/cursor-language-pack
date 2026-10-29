@@ -55,7 +55,7 @@ node bin/cli.mjs preview --locale=zh-tw
 
 扩展 id 保持 `polang233.cursor-language-pack`。也可用设置 `cursorLanguagePack.language` 选择 `auto`、`zh-cn`、`zh-tw` 或 `en`，切换后重启。仅安装扩展时，部分写死在程序里的英文需要命令行安装才能翻译。
 
-当前译文对应 Cursor **3.27.12**。新增或未覆盖的文案会显示英文。Cursor 和 MCP 等名称保留英文。
+当前译文对应 Cursor **3.27.22**。新增或未覆盖的文案会显示英文。Cursor 和 MCP 等名称保留英文。
 
 ## 开发与许可
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2 — 2026-10-29
+
+- Include the merged installer fix: ignore ordinary files in the extensions directory and explain macOS App Management write failures.
+- Verify Cursor 3.27.22 against 3.27.12. Core and built-in localization resources are unchanged; maintained hardcoded and commerce translations pass real-bundle checks.
+
 ## 1.1.1 — 2026-10-25
 
 - Replace first-publication notices with working npm instructions and document both locale overrides.
