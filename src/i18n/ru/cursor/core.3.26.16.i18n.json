@@ -2,127 +2,127 @@
   "version": "1.0.0",
   "contents": {
     "vs/platform/airlock/common/airlock": {
-      "airlock.disabled": "隔离舱仅在 SpaceX 模式下可用。",
-      "airlock.invalid": "这台电脑上 IT 的隔离舱设置无法使用：{0}",
-      "airlock.signedOut": "请使用 SpaceX 帐户登录，才能使用隔离舱。",
-      "airlock.unconfigured": "IT 尚未在这台电脑上设置隔离舱。"
+      "airlock.disabled": "Модуль доступен только в режиме SpaceX.",
+      "airlock.invalid": "Настройки ИТ-отдела недоступны на этом компьютере: {0}",
+      "airlock.signedOut": "Пожалуйста, войдите в свою учетную запись SpaceX, чтобы использовать модуль.",
+      "airlock.unconfigured": "ИТ-отдел еще не настроил отсек на этом компьютере."
     },
     "vs/platform/airlock/common/airlockConfig": {
-      "airlock.policy.containerName": "{0} 必须是容器名：由字母、数字、'_'、'.' 和 '-' 组成，并以字母或数字开头。",
-      "airlock.policy.containerUser": "{0} 必须是用户名或 id，后面可以跟 ':' 和组。",
-      "airlock.policy.defaultWorkspace": "{0} 必须是容器内的绝对路径。",
-      "airlock.policy.engine": "{0} 必须是 docker、podman，或绝对路径。",
-      "airlock.policy.hookPath": "{0} 必须是绝对路径。",
-      "airlock.policy.required": "未设置 {0}。",
-      "airlock.policy.string": "{0} 必须是字符串。",
-      "airlock.policy.timeout": "{0} 必须是大于 0 的秒数。"
+      "airlock.policy.containerName": "{0} должно быть именем контейнера: состоящим из букв, цифр, «_», «.» и «-» и начинающимся с буквы или цифры.",
+      "airlock.policy.containerUser": "{0} должен быть именем пользователя или идентификатором, за которым может следовать ':' и группа.",
+      "airlock.policy.defaultWorkspace": "{0} должен быть абсолютным путем внутри контейнера.",
+      "airlock.policy.engine": "{0} должен быть docker, podman или абсолютным путем.",
+      "airlock.policy.hookPath": "{0} должен быть абсолютным путем.",
+      "airlock.policy.required": "{0} не установлен.",
+      "airlock.policy.string": "{0} должен быть строкой.",
+      "airlock.policy.timeout": "{0} должно быть на несколько секунд больше 0."
     },
     "vs/platform/airlock/electron-main/airlockMainService": {
-      "airlock.devContainersSetup": "Cursor 无法让 Dev Containers 准备好打开隔离舱：{0}",
-      "airlock.dockerPathConflict": "{1} 中的 {0} 设置把 Dev Containers 指向了与隔离舱不同的容器引擎。请删除该项，然后重新连接。",
-      "airlock.wrapperNotExe": "Dev Containers 无法运行 IT 的引擎包装脚本 {0}。在 Windows 上，隔离舱的引擎必须是 docker、podman 或 .exe。"
+      "airlock.devContainersSetup": "Курсору не удалось подготовить контейнеры разработки для открытия отсека: {0}",
+      "airlock.dockerPathConflict": "Параметр {0} в {1} указывает контейнерам разработки на другой контейнерный механизм, отличный от отсека. Пожалуйста, удалите этот элемент и подключитесь заново.",
+      "airlock.wrapperNotExe": "Контейнеры разработки не могут запускать сценарий оболочки ИТ-подсистемы {0}. В Windows механизм отсека должен быть docker, podman или .exe."
     },
     "vs/platform/airlock/node/airlockDevContainers": {
-      "airlock.nameConfigInvalid": "Cursor 无法让 Dev Containers 准备好打开隔离舱，因为 Dev Containers 里该容器的设置不是 JSON 对象。请修正或删除 {0}，然后重试。",
-      "airlock.nameConfigRemoteEnvInvalid": "Cursor 无法让 Dev Containers 准备好打开隔离舱，因为 Dev Containers 里该容器设置中的 remoteEnv 不是 JSON 对象。请修正或删除 {0}，然后重试。",
-      "airlock.settingsInvalid": "Cursor 无法把 Dev Containers 指向隔离舱的容器引擎，因为 {0} 不是有效的 JSON。请修正后重试。"
+      "airlock.nameConfigInvalid": "Курсор не может подготовить контейнеры разработки для открытия отсека, поскольку настройки контейнера в контейнерах разработки не являются объектами JSON. Исправьте или удалите {0} и повторите попытку.",
+      "airlock.nameConfigRemoteEnvInvalid": "Курсор не может подготовить контейнеры разработки для открытия отсека, поскольку RemoteEnv в настройках контейнера в контейнерах разработки не является объектом JSON. Исправьте или удалите {0} и повторите попытку.",
+      "airlock.settingsInvalid": "Курсор не может указать контейнерам разработки на механизм контейнеров отсека, поскольку {0} не является допустимым JSON. Пожалуйста, исправьте это и повторите попытку."
     },
     "vs/platform/airlock/node/airlockHooks": {
-      "airlock.hook.exitCode": "{0} 钩子失败，退出码为 {1}。",
-      "airlock.hook.failed": "{0} 钩子失败：{1}",
-      "airlock.hook.failedToStart": "Cursor 无法运行位于 {1} 的 {0} 钩子：{2}",
-      "airlock.hook.signal": "{0} 钩子被 {1} 终止。",
-      "airlock.hook.timedOut": "{0} 钩子未在 {1} 秒内完成。"
+      "airlock.hook.exitCode": "Перехватчик {0} не выполнен с кодом выхода {1}.",
+      "airlock.hook.failed": "Не удалось перехватить {0}: {1}",
+      "airlock.hook.failedToStart": "Курсор не может запустить перехватчик {0} в {1}: {2}",
+      "airlock.hook.signal": "Перехватчик {0} был прекращен пользователем {1}.",
+      "airlock.hook.timedOut": "Перехватчик {0} не был завершен в течение {1} секунд."
     },
     "vs/platform/airlock/node/airlockLifecycle": {
-      "airlock.containerGone": "容器 {0} 已不存在。",
-      "airlock.containerMissing": "容器 {0} 不存在，且 IT 没有设置用来创建它的钩子。",
-      "airlock.engineFailed": "“{0} {1}”失败：{2}",
-      "airlock.engineNotFound": "{0} 不在 PATH 中。",
-      "airlock.engineUnavailable": "{0} 不可用：{1}",
-      "airlock.exitCode": "退出码 {0}",
-      "airlock.noAnswer": "{0} 秒内没有响应",
-      "airlock.progress.create": "正在创建容器…",
-      "airlock.progress.inspect": "正在查找容器 {0}…",
-      "airlock.progress.preAttach": "正在准备容器…",
-      "airlock.progress.restart": "正在重启容器…",
-      "airlock.progress.resume": "正在恢复容器…",
-      "airlock.progress.serverCheck": "正在检查 Cursor 服务器…",
-      "airlock.progress.start": "正在启动容器…",
-      "airlock.progress.wait": "正在等待容器启动…",
-      "airlock.progress.waitForEngine": "正在等待 {0}…",
-      "airlock.serverCheckFailed": "Cursor 无法检查容器 {0} 中的服务器：{1}",
-      "airlock.serverMissing": "容器 {0} 没有此版本 Cursor 需要的 Cursor 服务器（commit {1}，{2}）。请让 IT 为容器用户把它放到 ~/{3}/bin/{1}/。",
-      "airlock.startTimeout": "容器 {0} 未在 {1} 秒内启动（{2}）。",
-      "airlock.stoppedBySignal": "被 {0} 终止"
+      "airlock.containerGone": "Контейнер {0} больше не существует.",
+      "airlock.containerMissing": "Контейнер {0} не существует, и у ИТ-специалистов нет средства для его создания.",
+      "airlock.engineFailed": "'{0} {1}' не удалось: {2}",
+      "airlock.engineNotFound": "{0} отсутствует в PATH.",
+      "airlock.engineUnavailable": "{0} Недоступно: {1}",
+      "airlock.exitCode": "Код выхода {0}",
+      "airlock.noAnswer": "Нет ответа в течение {0} секунд.",
+      "airlock.progress.create": "Создание контейнера…",
+      "airlock.progress.inspect": "Ищем контейнер {0}…",
+      "airlock.progress.preAttach": "Готовим контейнер…",
+      "airlock.progress.restart": "Перезапуск контейнера...",
+      "airlock.progress.resume": "Восстановление контейнера...",
+      "airlock.progress.serverCheck": "Проверка сервера курсоров...",
+      "airlock.progress.start": "Запуск контейнера...",
+      "airlock.progress.wait": "Ожидание запуска контейнера...",
+      "airlock.progress.waitForEngine": "Ожидание {0}…",
+      "airlock.serverCheckFailed": "Курсор не может проверить сервер в контейнере {0}: {1}",
+      "airlock.serverMissing": "Контейнер {0} не имеет сервера Cursor, необходимого для этой версии Cursor (фиксация {1}, {2}). Попросите ИТ-специалиста поместить это в ~/{3}/bin/{1}/ для пользователей контейнеров.",
+      "airlock.startTimeout": "Контейнер {0} не запустился в течение {1} секунд ({2}).",
+      "airlock.stoppedBySignal": "прекращено пользователем {0}"
     },
     "vs/platform/spacexMode/electron-main/signInLogMainService": {
-      "signInLog": "登录"
+      "signInLog": "Войти"
     },
     "vs/platform/update/electron-main/updateService.darwin": {
-      "backgroundActivityRequired": "允许 {0} 在后台运行",
-      "backgroundActivityRequiredDetail": "请允许后台活动，以便在 {0} 上运行更新程序。macOS 会在 {0} 退出时停止更新安装程序，因为 {0} 未被允许在后台运行。",
-      "cancel": "取消(&&C)",
-      "openLoginItemsSettings": "打开系统设置(&&O)"
+      "backgroundActivityRequired": "Разрешить {0} работать в фоновом режиме",
+      "backgroundActivityRequiredDetail": "Разрешите фоновую активность для запуска программы обновления на {0}. macOS останавливает установщик обновлений при выходе {0}, поскольку {0} не разрешено работать в фоновом режиме.",
+      "cancel": "&Отмена",
+      "openLoginItemsSettings": "Открыть системные настройки(&&O)"
     },
     "vs/workbench/contrib/airlock/electron-sandbox/airlockAttach": {
-      "airlock.connecting": "正在连接隔离舱",
-      "airlock.devContainersMissing": "Cursor 通过 Dev Containers 扩展打开隔离舱，但该扩展未安装或已关闭。",
-      "airlock.openLog": "打开日志",
-      "airlock.reloadWindow": "重新加载窗口",
-      "airlockCanConnect": "此窗口能否打开 SpaceX 隔离舱"
+      "airlock.connecting": "Подключение изоляционной капсулы",
+      "airlock.devContainersMissing": "Курсор открывает контейнер через расширение Dev Containers, но расширение не установлено или закрыто.",
+      "airlock.openLog": "Открыть журнал",
+      "airlock.reloadWindow": "окно перезагрузки",
+      "airlockCanConnect": "Может ли это окно открыть капсулу SpaceX?"
     },
     "vs/workbench/contrib/airlock/electron-sandbox/airlockConnect.contribution": {
-      "airlock.connect": "连接到隔离舱"
+      "airlock.connect": "Подключиться к изоляционной капсуле"
     },
     "vs/workbench/contrib/automationsEditor/browser/automationsEditor.contribution": {
-      "openAutomationsEditor": "打开自动化",
-      "saveAutomation": "保存自动化"
+      "openAutomationsEditor": "Включите автоматизацию",
+      "saveAutomation": "Сохранить автоматизацию"
     },
     "vs/workbench/contrib/composer/browser/transcript/composerAgentNavigation": {
-      "agentNavigation.subagentNotFound": "找不到子智能体"
+      "agentNavigation.subagentNotFound": "Субагент не найден"
     },
     "vs/workbench/contrib/composer/browser/transcript/composerReactPlaneHostRows": {
-      "composer.projectSetupLoading": "正在设置项目"
+      "composer.projectSetupLoading": "Настройка проекта"
     },
     "vs/workbench/contrib/composer/browser/transcript/ComposerReactTranscriptRoot.react": {
-      "composer.transcript.regionLabel": "对话记录"
+      "composer.transcript.regionLabel": "Запись разговора"
     },
     "vs/workbench/contrib/composer/browser/transcript/transcriptLinkAddToChat": {
-      "glass.addToChat.ignoredFile": "Cursor 忽略了 {0}，因此无法加入对话。"
+      "glass.addToChat.ignoredFile": "Курсор проигнорировал {0} и не может присоединиться к беседе."
     },
     "vs/workbench/contrib/extensions/electron-sandbox/extensionMonitor.contribution": {
-      "extensionHostHeapSnapshotEnabled": "当本地扩展主机的内存用量达到上限的四分之三时，为每个主机写一份堆快照。快照保存在调试数据文件夹中，并在你用堆快照捕获调试数据时附上。写入快照会让扩展暂停几秒或更久。此更改只对之后启动的扩展主机生效。"
+      "extensionHostHeapSnapshotEnabled": "Когда использование памяти локально расширенного хоста достигает трех четвертей верхнего предела, для каждого хоста записывается снимок кучи. Снимки сохраняются в папке данных отладки и прикрепляются при захвате данных отладки с помощью снимка кучи. Запись в снимок приостановит расширение на несколько секунд или более. Это изменение вступает в силу только для хостов расширения, которые запускаются позже."
     },
     "vs/workbench/contrib/remote/common/remote.contribution": {
-      "remote.autoForwardPorts.policyDescription": "自动转发远程窗口（包括开发容器）中新进程监听的端口。设为 false 时，新的监听端口不会自动转发，但扩展和已打开的 URL 仍可转发端口。"
+      "remote.autoForwardPorts.policyDescription": "Автоматически пересылать порты, прослушиваемые новыми процессами в удаленных окнах (включая контейнеры разработки). Если установлено значение false, новые порты прослушивания не будут автоматически перенаправляться, но расширения и открытые URL-адреса все равно могут перенаправлять порты."
     },
     "vs/workbench/contrib/remote/common/spaceXModeRemoteDefaults": {
-      "spaceXMode": "SpaceX 模式"
+      "spaceXMode": "Модель SpaceX"
     },
     "vs/workbench/contrib/tracing/electron-sandbox/tracing.contribution": {
-      "captureDebuggingDataAgentHostHeapSnapshots": "智能体主机堆快照",
-      "captureDebuggingDataAgentHostHeapSnapshotsDetail": "附加智能体主机在最近一天内、内存接近上限时保存的堆快照。其中可能包含代码、提示词和附加文件。"
+      "captureDebuggingDataAgentHostHeapSnapshots": "Снимок кучи хоста агента",
+      "captureDebuggingDataAgentHostHeapSnapshotsDetail": "Прикрепите снимки кучи, сохраненные хостом агента в последний день, когда объем памяти близок к пределу. Он может содержать код, подсказки и дополнительные файлы."
     },
     "vs/workbench/electron-sandbox/actions/developerActions.cursor": {
-      "devWaitForSlashMenuSourcesForTesting": "开发：等待斜杠菜单来源（测试用）"
+      "devWaitForSlashMenuSourcesForTesting": "Разработка: дождаться исходного кода косой черты (для тестирования)"
     },
     "vs/workbench/services/agentData/common/projectAgentHeader": {
-      "teammateProjectWorker.refused": "只有启动此智能体的队友可以打开它。"
+      "teammateProjectWorker.refused": "Открыть его может только товарищ по команде, запустивший этого агента."
     },
     "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
-      "cursor.airlock.containerName": "SpaceX 模式开启时，Cursor 准备并打开的本地 Docker 或 Podman 容器名称（由设备管理设置）。隔离舱必需。",
-      "cursor.airlock.containerStatusHook": "以 JSON 报告隔离舱容器状态的脚本的绝对路径（由设备管理设置）。",
-      "cursor.airlock.containerUser": "Cursor 在隔离舱容器内使用的用户（由设备管理设置）。为空时，Cursor 使用容器的默认用户。",
-      "cursor.airlock.createContainerHook": "隔离舱容器不存在时用来创建它的脚本的绝对路径（由设备管理设置）。",
-      "cursor.airlock.defaultWorkspace": "Cursor 在隔离舱容器内打开的文件夹的绝对路径（由设备管理设置）。隔离舱必需。",
-      "cursor.airlock.engine": "隔离舱的容器引擎命令（由设备管理设置）：docker、podman、二者之一的绝对路径，或用于执行每条引擎命令的包装脚本的绝对路径。为空时，Cursor 使用 docker。",
-      "cursor.airlock.hookTimeoutSeconds": "Cursor 允许每个隔离舱钩子脚本运行、并等待容器启动的秒数，超时后放弃（由设备管理设置）。",
-      "cursor.airlock.preAttachContainerHook": "每次打开隔离舱容器之前，Cursor 要运行的脚本的绝对路径（由设备管理设置）。",
-      "cursor.airlock.restartContainerHook": "用来重启隔离舱容器的脚本的绝对路径（由设备管理设置）。为空时，Cursor 运行引擎自带的重启命令。",
-      "cursor.airlock.startContainerHook": "隔离舱容器未运行时用来启动它的脚本的绝对路径（由设备管理设置）。为空时，Cursor 运行引擎自带的启动命令。",
-      "cursor.deploymentId": "通过设备管理（MDM）设为某个部署 ID 后，Cursor 只会连接该部署，且无法切换。此版本不支持的 ID 会阻止登录。0 或未设置表示默认服务。",
-      "cursorAirlockConfigurationTitle": "SpaceX 隔离舱"
+      "cursor.airlock.containerName": "Курсор Имя локального контейнера Docker или Podman, который подготавливается и открывается при включенном режиме SpaceX (устанавливается системой управления устройством). Требуется изоляционная камера.",
+      "cursor.airlock.containerStatusHook": "Абсолютный путь к скрипту, который сообщает о состоянии контейнера перемычки в формате JSON (устанавливается системой управления устройством).",
+      "cursor.airlock.containerUser": "Курсор Пользователь, используемый в контейнере перемычки (устанавливается системой управления устройством). Если поле пусто, Cursor использует пользователя контейнера по умолчанию.",
+      "cursor.airlock.createContainerHook": "Абсолютный путь к сценарию, используемому для создания контейнера отсека, если он не существует (устанавливается системой управления устройством).",
+      "cursor.airlock.defaultWorkspace": "Курсор Абсолютный путь к папке, открытой в контейнере отсека (задается управлением устройством). Требуется изоляционная камера.",
+      "cursor.airlock.engine": "Команды контейнерного движка для отсека (задаются управлением устройством): docker, podman, абсолютный путь к любому из них или абсолютный путь к скрипту-оболочке, используемому для выполнения каждой команды движка. Когда курсор пуст, Cursor использует docker.",
+      "cursor.airlock.hookTimeoutSeconds": "Курсор Время в секундах, в течение которого каждому сценарию перехвата отсека разрешено запускаться и ждать запуска контейнера перед прекращением работы (устанавливается системой управления устройством).",
+      "cursor.airlock.preAttachContainerHook": "Курсор Абсолютный путь к сценарию (заданному системой управления устройством), который будет запускаться каждый раз перед открытием контейнера отсека.",
+      "cursor.airlock.restartContainerHook": "Абсолютный путь к сценарию, используемому для перезапуска контейнера перемычки (задается управлением устройствами). Когда курсор пуст, Cursor запускает собственную команду перезапуска двигателя.",
+      "cursor.airlock.startContainerHook": "Абсолютный путь к сценарию, используемому для запуска контейнера отсека, когда он не запущен (устанавливается системой управления устройством). Когда курсор пуст, Cursor запускает собственную команду запуска двигателя.",
+      "cursor.deploymentId": "После установки идентификатора развертывания с помощью управления устройствами (MDM) Cursor будет подключаться только к этому развертыванию и не сможет переключиться. Идентификаторы, не поддерживаемые в этой версии, не позволят войти в систему. 0 или не установлено, указывает на службу по умолчанию.",
+      "cursorAirlockConfigurationTitle": "Карантинная капсула SpaceX"
     }
   }
 }

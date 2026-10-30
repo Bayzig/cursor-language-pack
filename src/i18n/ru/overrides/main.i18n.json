@@ -2,57 +2,57 @@
   "version": "1.0.0",
   "contents": {
     "vs/editor/common/standaloneStrings": {
-      "chatEditing.navigation": "在编辑器中通过上一个{0}、下一个{1}在编辑之间导航，并可接受{2}、拒绝{3}或查看当前更改的差异{4}。"
+      "chatEditing.navigation": "Перемещайтесь между изменениями в редакторе с помощью кнопок «Предыдущий» {0}, «Следующий» {1} и принимайте {2}, отклоняйте {3} или просматривайте различия {4} для текущих изменений."
     },
     "vs/editor/contrib/gotoError/browser/gotoErrorWidget": {
-      "marker aria": "{0}，位于 {1}。"
+      "marker aria": "{0} в {1}."
     },
     "vs/editor/contrib/hover/browser/markdownHoverParticipant": {
-      "stopped rendering": "出于性能原因，已暂停对超长行的渲染。可通过 `editor.stopRenderingLineAfter` 配置此项。",
-      "too many characters": "出于性能原因，已跳过对超长行的标记化。可通过 `editor.maxTokenizationLineLength` 配置此项。"
+      "stopped rendering": "Рендеринг очень длинных строк приостановлен по соображениям производительности. Это можно настроить через «editor.stopRenderingLineAfter».",
+      "too many characters": "Токенизация очень длинных строк была пропущена по соображениям производительности. Это настраивается через «editor.maxTokenizationLineLength»."
     },
     "vs/platform/extensionManagement/common/abstractExtensionManagementService": {
-      "notFoundCompatibleDependency": "无法安装“{0}”扩展，因为它与当前版本的 {1} 不兼容（版本 {2}，VS Code 版本 {3}）。"
+      "notFoundCompatibleDependency": "Расширение «{0}» невозможно установить, поскольку оно несовместимо с текущей версией {1} (версия {2}, версия VS Code {3})."
     },
     "vs/platform/telemetry/common/telemetryService": {
-      "telemetry.docsStatement": "详细了解 [Cursor 的隐私政策]({0})和 [Cursor 的安全政策]({1})。"
+      "telemetry.docsStatement": "Узнайте больше о [Политике конфиденциальности Cursor]({0}) и [Политике безопасности Cursor]({1})."
     },
     "vs/workbench/api/browser/statusBarExtensionPoint": {
-      "text": "要为该条目显示的文本。可以使用 `$(<name>)` 语法在文本中嵌入图标，例如 'Hello $(globe)!'"
+      "text": "Текст, отображаемый для этой записи. Значки могут быть встроены в текст с использованием синтаксиса `$(<имя>)`, например «Hello $(globe)!»"
     },
     "vs/workbench/browser/workbench.contribution": {
-      "workbench.editor.editorActionsLocation.titleBar": "在窗口标题栏中显示编辑器操作。",
-      "navigationControlEnabled": "控制是否在标题栏中显示导航控件。",
-      "layoutControlEnabled": "控制是否在标题栏中显示布局控件。",
-      "window.commandCenter": "将命令启动器与窗口标题一起显示。",
-      "window.menuBarVisibility.compact": "菜单在边栏中显示为紧凑按钮。当 {0} 为 {1} 时，将忽略此值。"
+      "workbench.editor.editorActionsLocation.titleBar": "Показывает действия редактора в строке заголовка окна.",
+      "navigationControlEnabled": "Управляет отображением элементов управления навигацией в строке заголовка.",
+      "layoutControlEnabled": "Определяет, отображаются ли элементы управления макетом в строке заголовка.",
+      "window.commandCenter": "Отобразите панель запуска команд вместе с заголовком окна.",
+      "window.menuBarVisibility.compact": "Меню отображаются в виде компактных кнопок на боковой панели. Это значение игнорируется, если {0} равно {1}."
     },
     "vs/workbench/contrib/comments/browser/commentsAccessibility": {
-      "escape": "- 关闭注释 (Escape)"
+      "escape": "- Закрыть комментарии (Побег)"
     },
     "vs/workbench/contrib/files/browser/files.contribution": {
-      "explorer.autoRevealExclude.when": "对匹配文件的同级文件进行额外检查。使用 $(basename) 作为匹配文件名的变量。"
+      "explorer.autoRevealExclude.when": "Выполните дополнительные проверки одноуровневых элементов совпадающих файлов. Используйте $(basename) в качестве переменной, соответствующей имени файла."
     },
     "vs/workbench/contrib/mcp/common/mcpRegistry": {
-      "mcp.trust.details": "{0} 从 {1}（`{2}`）发现了模型上下文协议 (MCP) 服务器。{0} 可以在 Chat 中使用它们的功能。\n\n是否允许运行来自 {3} 的 MCP 服务器？"
+      "mcp.trust.details": "{0} обнаружил сервер протокола контекста модели (MCP) от {1} (`{2}`). {0} может использовать свои функции в чате. Разрешить запуск серверов MCP из {3}?"
     },
     "vs/workbench/contrib/notebook/browser/contrib/cellDiagnostics/diagnosticCellStatusBarContrib": {
-      "notebook.cell.status.diagnostic": "快速操作 {0}"
+      "notebook.cell.status.diagnostic": "Быстрое действие {0}"
     },
     "vs/workbench/contrib/scm/browser/scmHistoryViewPane": {
-      "scmGraphViewOutdated": "请使用刷新操作（$(refresh)）刷新此图表。"
+      "scmGraphViewOutdated": "Используйте операцию обновления ($(refresh)) для обновления этой диаграммы."
     },
     "vs/workbench/contrib/share/browser/share.contribution": {
-      "experimental.share.enabled": "控制是否启用实验性的“共享”命令。"
+      "experimental.share.enabled": "Определяет, включена ли экспериментальная команда «поделиться»."
     },
     "vs/workbench/contrib/tasks/browser/taskQuickPick": {
-      "TaskQuickPick.changeSettingsOptions": "$(gear) 已关闭 {0} 任务检测。启用 {1} 任务检测..."
+      "TaskQuickPick.changeSettingsOptions": "Обнаружение задач $(gear) {0} отключено. Включить обнаружение задач {1}..."
     },
     "vs/workbench/contrib/terminalContrib/suggest/common/terminalSuggestConfiguration": {
-      "suggest.enabled": "在受支持的 shell（{0}）中启用终端智能感知建议（预览），前提是将 {1} 设置为 {2}。"
+      "suggest.enabled": "Включает предложения IntelliSense для терминала (предварительная версия) в поддерживаемых оболочках ({0}), если для {1} установлено значение {2}."
     },
     "vs/workbench/services/auxiliaryWindow/browser/auxiliaryWindowService": {
-      "unableToOpenWindowDetail": "为避免此问题再次发生，请确保允许此网站的弹出窗口。"
+      "unableToOpenWindowDetail": "Чтобы избежать повторения этой проблемы, пожалуйста, разрешите всплывающие окна для этого сайта."
     },
     "vs/workbench/services/textfile/browser/textFileService": {
       "fileBinaryError": "{0}"

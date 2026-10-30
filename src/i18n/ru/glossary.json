@@ -1,0 +1,26 @@
+{
+  "$comment": "Terminology contract for ru. Translate UI labels, including feature names. Keep Cursor and protocol names such as MCP.",
+  "locale": "ru",
+  "terms": [
+    { "en": "Cursor", "ru": "Cursor", "keepEnglish": true, "note": "Название продукта — не переводится" },
+    { "en": "Agent", "ru": "Агент", "keepEnglish": false, "note": "Переводится и в заголовках, и в тексте; Agents — «Агенты»" },
+    { "en": "Composer", "ru": "Composer", "keepEnglish": true, "note": "Название функции Cursor; в речи допустимо «Композер»" },
+    { "en": "Tab", "ru": "автодополнение Tab", "keepEnglish": false, "note": "Функция дополнения кода. Вкладки редактора — «вкладки»" },
+    { "en": "Plan", "ru": "План", "keepEnglish": false },
+    { "en": "Ask", "ru": "Спросить", "keepEnglish": false },
+    { "en": "Steer", "ru": "Направить", "keepEnglish": false },
+    { "en": "Cloud Agent", "ru": "Облачный агент", "keepEnglish": false },
+    { "en": "Bugbot", "ru": "Bugbot", "keepEnglish": true, "note": "Название продукта" },
+    { "en": "Instant Grep", "ru": "Instant Grep", "keepEnglish": true, "note": "Название функции" },
+    { "en": "Agent Store", "ru": "Магазин агентов", "keepEnglish": false },
+    { "en": "Rules", "ru": "Правила", "keepEnglish": false },
+    { "en": "Memories", "ru": "Воспоминания", "keepEnglish": false },
+    { "en": "MCP", "ru": "MCP", "keepEnglish": true },
+    { "en": "Skills", "ru": "Навыки", "keepEnglish": false },
+    { "en": "Hooks", "ru": "Хуки", "keepEnglish": false },
+    { "en": "Checkpoints", "ru": "Контрольные точки", "keepEnglish": false },
+    { "en": "Auto-review", "ru": "Автопроверка", "keepEnglish": false },
+    { "en": "Workspace", "ru": "Рабочая область", "keepEnglish": false },
+    { "en": "Command Palette", "ru": "Палитра команд", "keepEnglish": false }
+  ]
+}

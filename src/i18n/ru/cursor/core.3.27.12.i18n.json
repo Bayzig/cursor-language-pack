@@ -2,27 +2,27 @@
   "version": "1.0.0",
   "contents": {
     "vs/workbench/contrib/composer/browser/promptInput/pathless-video-toast": {
-      "pathlessVideoRejected": "无法附加此视频。请先将其保存为文件，再重新附加。",
-      "pathlessDocumentRejected": "无法附加此文档。请先将其保存为文件，再重新附加。",
-      "cloudUnsupportedAttachmentRejected": "无法将此文件附加到云端智能体。"
+      "pathlessVideoRejected": "Это видео невозможно прикрепить. Пожалуйста, сохраните его как файл, прежде чем прикреплять его снова.",
+      "pathlessDocumentRejected": "Этот документ невозможно прикрепить. Пожалуйста, сохраните его как файл, прежде чем прикреплять его снова.",
+      "cloudUnsupportedAttachmentRejected": "Этот файл невозможно прикрепить к облачному агенту."
     },
     "vs/workbench/services/agentData/browser/queueItemEditSaves": {
-      "queuedMessageUpdateFailed": "更新排队中的消息失败。"
+      "queuedMessageUpdateFailed": "Не удалось обновить сообщения в очереди."
     },
     "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
-      "cursorManagedDeploymentConfigurationTitle": "受管部署",
-      "cursor.deployment.backendUrl": "仅适用于 Cursor Orbit：DeploymentId 指定部署的 API 的 HTTPS 源，由设备管理设置。必填。",
-      "cursor.deployment.websiteUrl": "仅适用于 Cursor Orbit：该部署网站的 HTTPS 源，由设备管理设置。必填。",
-      "cursor.deployment.issuer": "仅适用于 Cursor Orbit：该部署登录令牌的签发者，须为与令牌 iss 声明完全一致的 HTTPS URL，由设备管理设置。必填。",
-      "cursor.deployment.authorizationEndpoint": "仅适用于 Cursor Orbit：该部署 OAuth 授权端点的 HTTPS URL，由设备管理设置。必填。",
-      "cursor.deployment.tokenEndpoint": "仅适用于 Cursor Orbit：该部署 OAuth 令牌端点的 HTTPS URL，须与签发者同源，由设备管理设置。必填。",
-      "cursor.deployment.revocationEndpoint": "仅适用于 Cursor Orbit：该部署 OAuth 撤销端点的 HTTPS URL，须与签发者同源，由设备管理设置。必填。",
-      "cursor.deployment.clientId": "仅适用于 Cursor Orbit：Cursor 在该部署身份提供程序中的 OAuth 客户端 ID，令牌以此作为受众，由设备管理设置。必填。",
-      "cursor.deployment.emailDomains": "仅适用于 Cursor Orbit：允许登录该部署的帐户电子邮件域，以逗号分隔，仅支持完全匹配，由设备管理设置。必填。"
+      "cursorManagedDeploymentConfigurationTitle": "Управляемое развертывание",
+      "cursor.deployment.backendUrl": "Применяется только к Cursor Orbit: DeploymentId Указывает источник HTTPS развернутого API, установленный системой управления устройствами. Необходимый.",
+      "cursor.deployment.websiteUrl": "Только для Cursor Orbit: источник HTTPS для этого веб-сайта развертывания, установленный системой управления устройствами. Необходимый.",
+      "cursor.deployment.issuer": "Применимо только к Cursor Orbit: эмитент токена входа в систему развертывания должен быть URL-адресом HTTPS, который точно совпадает с утверждением token iss, установленным системой управления устройствами. Необходимый.",
+      "cursor.deployment.authorizationEndpoint": "Только для Cursor Orbit: URL-адрес HTTPS конечной точки авторизации OAuth этого развертывания, заданный системой управления устройствами. Необходимый.",
+      "cursor.deployment.tokenEndpoint": "Применяется только к Cursor Orbit: URL-адрес HTTPS, по которому развертывается конечная точка токена OAuth, должен быть того же источника, что и эмитент, и установлен системой управления устройствами. Необходимый.",
+      "cursor.deployment.revocationEndpoint": "Применимо только к Cursor Orbit: URL-адрес HTTPS развернутой конечной точки отзыва OAuth должен быть из того же источника, что и эмитент, и установлен системой управления устройствами. Необходимый.",
+      "cursor.deployment.clientId": "Только для Cursor Orbit: идентификатор OAuth-клиента Cursor в поставщике удостоверений этого развертывания, для которого токен является аудиторией, установленный системой управления устройством. Необходимый.",
+      "cursor.deployment.emailDomains": "Только для Cursor Orbit: домены электронной почты учетной записи, которым разрешен вход в это развертывание, разделены запятой, поддерживаются только точные совпадения, установленные управлением устройствами. Необходимый."
     },
     "vs/workbench/services/workspaceConnection/browser/workspaceConnectionService": {
-      "workspaceConnection.reconnectFailedNamed": "重新连接失败。“{0}”仍处于断开状态。",
-      "workspaceConnection.reconnectGaveUpNamed": "无法重新连接到“{0}”。"
+      "workspaceConnection.reconnectFailedNamed": "Повторное подключение не удалось. '{0}' по-прежнему отключен.",
+      "workspaceConnection.reconnectGaveUpNamed": "Невозможно повторно подключиться к '{0}'."
     }
   }
 }

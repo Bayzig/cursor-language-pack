@@ -10,7 +10,7 @@ import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { p, readJson, writeJson } from './lib/util.mjs';
 import { npmCommand } from './lib/npm-tooling.mjs';
-import { chineseLocale, systemLocale } from './lib/system-locale.mjs';
+import { pickLocale, systemLocale } from './lib/system-locale.mjs';
 
 // ZIP central directory reader for the VSIX built by vsce; no runtime dependency.
 function zipEntry(zip, name) {
@@ -253,7 +253,7 @@ if(args[0] === '--install-extension') {
   execute(['restore', ...args]);
   assert.equal(fs.readFileSync(target, 'utf8'), updated, 'restore never reinstates an older application build');
   execute(args);
-  const automaticLocale = chineseLocale(systemLocale());
+  const automaticLocale = pickLocale(systemLocale());
   assert.ok(fs.readFileSync(path.join(data, 'argv.json'), 'utf8').includes(`"${automaticLocale}"`), 'default install uses the detected OS language');
   execute(['restore', ...args]);
   // Exercise npx's one-off tarball install and generated command, outside the repository.

@@ -56,12 +56,14 @@
     "scripts/translate-install.mjs",
     "src/extension/main.cjs",
     "src/i18n/zh-cn/hardcoded.json",
+    "src/i18n/ru/hardcoded.json",
     "src/i18n/zh-tw/hardcoded.json",
     "assets/language-pack.vsix",
     "config.json",
     "LICENSE",
     "NOTICE",
     "src/i18n/zh-cn/commerce.json",
+    "src/i18n/ru/commerce.json",
     "src/i18n/zh-tw/commerce.json"
   ],
   "publishConfig": {

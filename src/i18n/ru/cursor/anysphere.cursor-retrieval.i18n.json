@@ -3,7 +3,7 @@
   "contents": {
     "package": {
       "displayName": "AI Completions",
-      "description": "从代码语言模型获取补全。"
+      "description": "Получите дополнения из модели языка кода."
     }
   }
 }

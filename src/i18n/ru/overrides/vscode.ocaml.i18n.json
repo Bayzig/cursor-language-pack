@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "contents": {
     "package": {
-      "displayName": "OCaml 语言基础",
-      "description": "为 OCaml 文件提供语法突出显示和括号匹配。"
+      "displayName": "Основы языка OCaml",
+      "description": "Обеспечивает подсветку синтаксиса и сопоставление скобок для файлов OCaml."
     }
   }
 }
