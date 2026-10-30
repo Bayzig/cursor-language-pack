@@ -1,0 +1,10 @@
+{
+  "$comment": "Package-manifest translations supplementing the pinned vscode-loc baseline. package.nls.json keys belong in contents.package.",
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "microsoft-authentication.implementation.description": "用于登录 Microsoft 账户的身份验证实现。\n\n*注意：`classic` 实现已弃用，将在未来版本中随此设置一并移除。如果只有 `classic` 实现可用，请[提交问题](command:workbench.action.openIssueReporter)并说明你要登录的内容。*",
+      "microsoft-authentication.implementation.enumDescriptions.classic": "（已弃用）使用经典身份验证流程登录 Microsoft 账户。"
+    }
+  }
+}

@@ -3,9 +3,10 @@ import path from 'node:path';
 import readline from 'node:readline/promises';
 import { spawnSync } from 'node:child_process';
 import { p, readJson } from './util.mjs';
-import { chineseLocale, systemLocale } from './system-locale.mjs';
+import { pickLocale, systemLocale } from './system-locale.mjs';
 
 const COMMANDS = ['install', 'preview', 'status', 'restore'];
+const LOCALE_NAMES = { 'zh-cn': '简体中文', 'zh-tw': '繁體中文', ru: 'Русский' };
 
 export function parseCli(args) {
   const options = {};
@@ -29,8 +30,8 @@ export function parseCli(args) {
       command = arg;
     }
   }
-  if (options.locale && !['auto', 'zh-cn', 'zh-tw'].includes(options.locale)) {
-    throw new Error('语言可选 auto、zh-cn、zh-tw。');
+  if (options.locale && !['auto', 'zh-cn', 'zh-tw', 'ru'].includes(options.locale)) {
+    throw new Error('语言可选 auto、zh-cn、zh-tw、ru。');
   }
   return { command: command ?? 'install', options };
 }
@@ -42,7 +43,7 @@ export async function runCli(product, args = process.argv.slice(2)) {
     const pkg = readJson(p('package.json'));
     if (options.version) { console.log(pkg.version); return; }
     if (options.help) {
-      console.log(`${name} 中文语言包\n\nnpx ${pkg.name}@latest [install|preview|status|restore] [选项]\n\n不带命令时安装。先完全退出 ${name}，完成后重新打开。\n  --locale=zh-cn|zh-tw  指定简体或繁体，默认按系统语言选择\n  --dir=<路径>          指定安装目录，macOS 可填 ${name}.app\n  --yes                 多份安装时要求用 --dir 指定，跳过选择\n  --help                显示帮助\n  --version             显示版本\n\n台湾、香港、澳门及 zh-Hant 默认繁体，其他系统默认简体。\nrestore 恢复程序文件，显示语言和语言扩展可在 ${name} 内调整。`);
+      console.log(`${name} 中文语言包\n\nnpx ${pkg.name}@latest [install|preview|status|restore] [选项]\n\n不带命令时安装。先完全退出 ${name}，完成后重新打开。\n  --locale=zh-cn|zh-tw|ru  指定简体、繁体或俄语，默认按系统语言选择\n  --dir=<路径>          指定安装目录，macOS 可填 ${name}.app\n  --yes                 多份安装时要求用 --dir 指定，跳过选择\n  --help                显示帮助\n  --version             显示版本\n\n台湾、香港、澳门及 zh-Hant 默认繁体，ru 系统默认俄语，其他系统默认简体。\nrestore 恢复程序文件，显示语言和语言扩展可在 ${name} 内调整。`);
       return;
     }
     const paths = await import(`./${product}-paths.mjs`);
@@ -78,8 +79,8 @@ export async function runCli(product, args = process.argv.slice(2)) {
       const verified = product === 'cursor' ? config.target.verifiedCursorVersions : config.target.verifiedKiroVersions;
       if (version && !verified.includes(version)) console.warn(`${name} ${version} 尚未验证，新增或变更的文案可能显示英文。`);
       const detected = options.locale && options.locale !== 'auto' ? null : systemLocale();
-      const locale = detected === null ? options.locale : chineseLocale(detected);
-      console.log(`语言：${locale === 'zh-tw' ? '繁體中文' : '简体中文'}${detected === null ? '' : `（系统 ${detected}）`}。可用 --locale=zh-cn 或 --locale=zh-tw 更改。`);
+      const locale = detected === null ? options.locale : pickLocale(detected);
+      console.log(`语言：${LOCALE_NAMES[locale] ?? locale}${detected === null ? '' : `（系统 ${detected}）`}。可用 --locale=zh-cn、--locale=zh-tw 或 --locale=ru 更改。`);
       flags.push(`--locale=${locale}`);
       if (command === 'install') {
         const vsix = [p('assets', 'language-pack.vsix'), p('dist', `${config.namePrefix}-${config.version}.vsix`)]

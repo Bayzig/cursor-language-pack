@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/platform/agentHarness/common/agentHostUpdate.config.contribution": {
+      "agentHostConfigurationTitle": "智能体主机",
+      "agentHostUpdateMode": "控制在 Cursor 各版本之间，是否更新负责本地智能体回合的程序。更新从 Cursor 服务下载，并在下一次智能体回合时生效。",
+      "agentHostUpdateMode.default": "跟随 update.mode：除非关闭了 Cursor 更新，否则会更新。",
+      "agentHostUpdateMode.none": "永不更新，继续使用当前 Cursor 版本自带的智能体。",
+      "agentHostUpdateMode.on": "即使关闭了 Cursor 更新，也进行更新。"
+    },
+    "vs/platform/cursorStartupHttp/common/startupConnectTransportSetting": {
+      "cursor.experimental.startupConnectTransport": "实验功能。窗口启动时就打开后端登录闸门，并由主进程处理 Connect 请求，而不必等待 Cursor Always Local 扩展。除非你的帐户也启用了这项实验，否则不会生效。重新加载窗口后生效。"
+    },
+    "vs/workbench/browser/parts/editor/cloneRepoFromEmptyScreen": {
+      "emptyScreen.cloneRepo.downloadGit": "下载 Git",
+      "emptyScreen.cloneRepo.gitUnavailable": "克隆仓库需要 Git。请安装 Git，或启用内置 Git 扩展，然后重启 Cursor。"
+    },
+    "vs/workbench/contrib/aiConfig/browser/aiconfig.contribution": {
+      "agent.remoteWorkspaceAuthorities.description": "由设备管理配置时，本地窗口会禁用智能体，只在远程工作区启用。值为空时允许所有远程地址；否则填写逗号分隔的模式，不区分大小写，可用 * 通配（例如 ssh-remote+127.0.0.1*）。",
+      "agent.remoteWorkspaceAuthorities.policyDescription": "要求智能体在远程工作区中运行，并可选用逗号分隔的远程地址模式加以限制。值为空时允许所有远程地址。",
+      "agent.remoteWorkspaceAuthorities.title": "智能体远程工作区地址"
+    },
+    "vs/workbench/contrib/composer/browser/components/PromptEditInput.react": {
+      "composer.promptEditInput.ariaLabel": "编辑消息"
+    },
+    "vs/workbench/contrib/composer/browser/composerLogService": {
+      "cursorComposerLoggerName": "Cursor Composer"
+    },
+    "vs/workbench/contrib/composer/browser/inlineDiffSuppressionNotification": {
+      "inlineDiff.disableProtection": "禁用保护",
+      "inlineDiff.tooManyChanges": "由于更改过多无法显示，最近更改的内联差异已被抑制。"
+    },
+    "vs/workbench/contrib/composer/browser/promptInputTrays/PromptInputAnchoredTrayHovercard.react": {
+      "composer.anchoredTray.previewAriaLabel": "{0} 的预览"
+    },
+    "vs/workbench/contrib/composer/browser/realtimeVoice/realtimeVoiceTranscriptEditor": {
+      "composer.realtimeVoice.transcriptEditor": "语音通话"
+    },
+    "vs/workbench/contrib/tracing/electron-sandbox/tracing.contribution": {
+      "captureDebuggingDataNotePlaceholder": "出了什么问题？（可选）"
+    },
+    "vs/workbench/contrib/ui/browser/aiInput/plugins/mentions/MentionNode": {
+      "mentionChip.removeMention": "移除提及"
+    },
+    "vs/workbench/contrib/update/browser/update": {
+      "updateDidNotInstallRetrying": "{0} 未能完成到版本 {1} 的更新。正在重新下载更新。"
+    },
+    "vs/workbench/services/ai/common/backendUrl": {
+      "isLocalBackend": "客户端是否指向本机上运行的后端"
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursor.xaiIdentity.enabled": "通过设备管理 (MDM) 启用后，Cursor 会经由 xAI（auth.x.ai）登录，而不是 Cursor 帐户，并在此设备上验证 xAI 令牌。"
+    }
+  }
+}
