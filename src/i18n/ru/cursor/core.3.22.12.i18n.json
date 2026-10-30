@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/platform/update/common/updateActionTitles": {
+      "checkForUpdates": "Проверьте наличие обновлений...",
+      "checkingForUpdates2": "Проверяем наличие обновлений...",
+      "DownloadingUpdate": "Загрузка обновлений...",
+      "downloadUpdate": "Загрузка обновлений",
+      "installingUpdate": "Установка обновлений...",
+      "installUpdate": "Установить обновления",
+      "restartToUpdate": "Перезапустите, чтобы обновить"
+    },
+    "vs/platform/update/electron-main/updateService.linux": {
+      "packageUpdateDialogMessage": "Пожалуйста, обновите {0} с помощью менеджера пакетов.",
+      "packageUpdateDialogDetail": "Запустите эту команду в терминале и перезапустите {0}: {1}",
+      "copyCommand": "команда копирования",
+      "cancel": "Отмена"
+    },
+    "vs/workbench/browser/parts/dialogs/aboutDialog.react": {
+      "aboutDialog.copySucceeded": "Скопировано",
+      "aboutDialog.versionLabel": "Версия {0}",
+      "aboutDialog.copyVersion": "копировать версию",
+      "aboutDialog.copyBuildDate": "Скопировать дату сборки",
+      "aboutDialog.copyVersionInfo": "Скопировать информацию о версии"
+    },
+    "vs/workbench/contrib/agents/browser/components/AgentSidebarFooter": {
+      "agentSidebarFooter.privateInference": "частные рассуждения"
+    },
+    "vs/workbench/contrib/update/browser/update": {
+      "packageUpdateAvailable": "Существует более новый пакет {0} ({1}), доступный через {2}.",
+      "update": "возобновлять"
+    }
+  }
+}

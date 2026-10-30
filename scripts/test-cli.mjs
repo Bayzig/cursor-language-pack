@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
-import { chineseLocale, systemLocale } from './lib/system-locale.mjs';
+import { chineseLocale, pickLocale, systemLocale } from './lib/system-locale.mjs';
 import { parseCli } from './lib/cli.mjs';
 import { nodeScript } from './lib/npm-tooling.mjs';
 import { p, readJson, parseArgs } from './lib/util.mjs';
@@ -16,6 +16,18 @@ test('Traditional Chinese regions and script, with explicit script taking preced
   for (const tag of ['zh-CN', 'zh_SG.UTF-8', 'zh-Hans-HK', 'en-US', 'C.UTF-8', '', undefined]) {
     assert.equal(chineseLocale(tag), 'zh-cn', tag);
   }
+});
+
+test('Russian system locales pick the Russian pack; everything else falls back to Chinese', () => {
+  for (const tag of ['ru', 'ru-RU', 'ru_RU.UTF-8', 'RU', 'ru-MD', 'ru-UA', 'ru-KZ']) {
+    assert.equal(pickLocale(tag), 'ru', tag);
+  }
+  for (const tag of ['en-US', 'de', 'C.UTF-8', '', undefined, 'zh-TW', 'zh_CN']) {
+    assert.notEqual(pickLocale(tag), 'ru', tag);
+  }
+  assert.equal(pickLocale('ru'), 'ru');
+  assert.equal(pickLocale('zh-TW'), 'zh-tw');
+  assert.equal(pickLocale('en-US'), 'zh-cn');
 });
 
 test('Windows reads UI culture even when a terminal LANG is English', () => {
@@ -48,7 +60,7 @@ test('CLI accepts overrides and paths with spaces, equals signs and shell charac
 
 test('help/version run without any editor installation', () => {
   const pkg = readJson(p('package.json'));
-  assert.match(nodeScript(p('bin', 'cli.mjs'), ['--help']).stdout, /--locale=zh-cn\|zh-tw/);
+  assert.match(nodeScript(p('bin', 'cli.mjs'), ['--help']).stdout, /--locale=zh-cn\|zh-tw\|ru/);
   assert.equal(nodeScript(p('bin', 'cli.mjs'), ['--version']).stdout.trim(), pkg.version);
 });
 

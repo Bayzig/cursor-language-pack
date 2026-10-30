@@ -1,0 +1,10 @@
+{
+  "$comment": "Package-manifest translations supplementing the pinned vscode-loc baseline. package.nls.json keys belong in contents.package.",
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "microsoft-authentication.implementation.description": "Реализация аутентификации для входа в учетные записи Microsoft. *Примечание: «классическая» реализация устарела и будет удалена вместе с этим параметром в будущем выпуске. Если доступна только «классическая» реализация, [отправьте проблему](команда:workbench.action.openIssueReporter) и опишите, что вы хотите зарегистрировать. *",
+      "microsoft-authentication.implementation.enumDescriptions.classic": "(Устарело) Войдите в свою учетную запись Microsoft, используя классическую процедуру аутентификации."
+    }
+  }
+}

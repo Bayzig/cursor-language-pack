@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/platform/tray/electron-main/dockMenuMain": {
+      "miNewWindow": "Новое окно(&&W)"
+    },
+    "vs/workbench/contrib/files/browser/files.glass.contribution": {
+      "explore": "Исследователь"
+    },
+    "vs/workbench/contrib/files/browser/files.view.contribution": {
+      "explorerViewIcon": "Просмотрите значок представления Explorer.",
+      "openEditorsIcon": "Посмотрите на значок, который открывает окно редактора.",
+      "miViewExplorer": "&Проводник(&E)",
+      "openFolder": "открыть папку",
+      "addAFolder": "Добавить папку",
+      "openRecent": "Открыть последние файлы",
+      "noWorkspaceHelp": "Папка не добавлена ​​в рабочую область.\n{0}",
+      "noFolderHelpWeb": "Папка еще не открыта.\n{0}\n{1}",
+      "remoteNoFolderHelp": "Подключен к удаленному.\n{0}",
+      "noFolderButEditorsHelp": "Папка еще не открыта.\n{0}\nОткрытие папки закроет все открытые в данный момент редакторы. Чтобы оставить его открытым, измените его на {1}.",
+      "noFolderHelp": "Папка еще не открыта.\n{0}",
+      "folders": "папка",
+      "explore": "Исследователь"
+    },
+    "vs/workbench/contrib/outline/browser/outline.view.contribution": {
+      "outlineViewIcon": "Значок схемы просмотра.",
+      "name": "контур"
+    },
+    "vs/workbench/contrib/output/browser/output.view.contribution": {
+      "outputViewIcon": "Просмотрите значок для просмотра вывода.",
+      "miToggleOutput": "Выход(&&О)",
+      "output": "выход"
+    },
+    "vs/workbench/contrib/scm/browser/scm.view.contribution": {
+      "sourceControlViewIcon": "Просмотрите значок представления системы управления версиями.",
+      "source control view": "Управление исходным кодом",
+      "no open repo": "В настоящее время не зарегистрировано ни одного поставщика средств контроля версий.",
+      "no open repo in an untrusted workspace": "Все зарегистрированные поставщики системы контроля версий не будут работать в «ограниченном режиме».",
+      "manageWorkspaceTrustAction": "Управление доверием к рабочему пространству",
+      "no history items": "У выбранного поставщика системы управления версиями нет записей истории системы управления версиями.",
+      "source control repositories": "Репозиторий управления исходным кодом",
+      "miViewSCM": "Управление исходным кодом(&&C)",
+      "source control graph": "Схема управления исходным кодом",
+      "source control": "Управление исходным кодом",
+      "scmRepositories": "репозиторий",
+      "scmChanges": "Изменять",
+      "scmGraph": "диаграмма",
+      "editorBugbot": "Обзор агента"
+    },
+    "vs/workbench/contrib/terminal/browser/terminal.glass.contribution": {
+      "terminal": "Терминал"
+    },
+    "vs/workbench/contrib/terminal/browser/terminal.view.contribution": {
+      "miToggleIntegratedTerminal": "Терминал(&&Т)",
+      "terminal": "Терминал"
+    },
+    "vs/workbench/contrib/timeline/browser/timeline.view.contribution": {
+      "timelineViewIcon": "Значок просмотра для просмотра временной шкалы."
+    }
+  }
+}

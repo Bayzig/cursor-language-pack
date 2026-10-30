@@ -1,0 +1,13 @@
+{
+  "$comment": "Package-manifest translations supplementing the pinned vscode-loc baseline. package.nls.json keys belong in contents.package.",
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "command.deleteWorktreeFromPalette": "Удалить рабочее дерево...",
+      "command.git.resolveAllConflictsInChat": "Решайте конфликты в разговоре",
+      "config.blameEditorDecoration.forceDisabled": "Если этот параметр включен, принудительно отключит оформление обвинения (обвинения) Git в редакторе, переопределив любые настройки уровня рабочей области. Это настройка уровня приложения.",
+      "config.diagnosticsCommitHook.Enabled": "Определяет, проверяются ли нерешенные диагностические проблемы перед фиксацией.",
+      "config.diagnosticsCommitHook.Sources": "Управляет списком источников (**Элемент**) и минимальной серьезностью (**Значение**), которые следует учитывать перед отправкой. **Примечание.** Чтобы игнорировать диагностику из определенного источника, добавьте этот источник в список и установите минимальный уровень серьезности «Нет»."
+    }
+  }
+}

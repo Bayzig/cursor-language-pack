@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/workbench/common/contextkeys": {
+      "isGlass": "Находится ли верстак в стеклянном режиме"
+    },
+    "vs/workbench/contrib/debug/common/debug": {
+      "openLaunchJson": "Открыть '{0}'"
+    },
+    "vs/workbench/contrib/preferences/browser/preferences.view.contribution": {
+      "clear": "Очистить результаты поиска",
+      "clearHistory": "Очистить историю поиска сочетаний клавиш",
+      "keybindingsEditor": "Редактор привязки клавиш",
+      "showDefaultKeybindings": "Показать системные сочетания клавиш",
+      "showExtensionKeybindings": "Показать расширенные сочетания клавиш",
+      "showUserKeybindings": "Показать пользовательские сочетания клавиш"
+    },
+    "vs/workbench/contrib/quickaccess/browser/quickAccess.view.contribution": {
+      "miOpenView": "Открыть просмотр(&&O)…",
+      "viewQuickAccess": "открытый вид",
+      "viewQuickAccessPlaceholder": "Введите имя представления, выходного канала или терминала, который вы хотите открыть."
+    },
+    "vs/workbench/contrib/workspace/browser/workspace.view.contribution": {
+      "addWorkspaceFolderDetail": "Вы добавляете файлы в доверенную рабочую область, которая в настоящее время не является доверенной. Вы доверяете авторам этих новых файлов?",
+      "addWorkspaceFolderMessage": "Вы доверяете автору файлов в этой папке?",
+      "cancelWorkspaceTrustButton": "Отмена",
+      "checkboxString": "Доверяйте авторам всех файлов в родительской папке \"{0}\"",
+      "dontTrustFolderOptionDescription": "Открыть папку в ограниченном режиме",
+      "dontTrustOption": "Нет, я не доверяю этому автору(&&N)",
+      "dontTrustWorkspaceOptionDescription": "Открыть рабочую область в ограниченном режиме",
+      "folderStartupTrustDetails": "{0} предоставляет функцию автоматического выполнения файлов в этой папке.",
+      "folderTrust": "Вы доверяете автору файлов в этой папке?",
+      "grantFolderTrustButton": "Доверить папку и продолжить (&&T)",
+      "grantWorkspaceTrustButton": "Доверить рабочую область и продолжить&&T",
+      "immediateTrustRequestLearnMore": "Если вы не доверяете автору этих файлов, рекомендуется не продолжать, поскольку эти файлы могут быть вредоносными. Подробности см. в [нашей документации](https://aka.ms/vscode-workspace-trust).",
+      "immediateTrustRequestMessage": "Если источник открытого в данный момент файла или папки не является надежным, функция, которую вы пытаетесь использовать, может представлять угрозу безопасности.",
+      "manageWorkspaceTrustButton": "&Управлять",
+      "newWindow": "Открыть в ограниченном режиме(&&R)",
+      "no": "нет",
+      "open": "Открыть(&&О)",
+      "openLooseFileLearnMore": "Если вы не хотите открывать ненадежные файлы, рекомендуется открывать их в новом окне в ограниченном режиме, поскольку эти файлы могут быть вредоносными. Подробности см. в [нашей документации](https://aka.ms/vscode-workspace-trust).",
+      "openLooseFileWindowDetails": "Вы попытались открыть ненадежный файл в доверенном окне.",
+      "openLooseFileWindowMesssage": "Вы хотите разрешить ненадежные файлы в этом окне?",
+      "openLooseFileWorkspaceCheckbox": "Запомнить мое решение для всех рабочих пространств",
+      "openLooseFileWorkspaceDetails": "Вы попытались открыть ненадежный файл в доверенной рабочей области.",
+      "openLooseFileWorkspaceMesssage": "Вы хотите разрешить ненадежным файлам в этой рабочей области?",
+      "restrictedModeBannerAriaLabelFolder": "Ограниченный режим предназначен для безопасного просмотра кода. Доверьте эту папку, чтобы включить все функции. Используйте клавиши навигации для доступа к действиям баннера.",
+      "restrictedModeBannerAriaLabelWindow": "Ограниченный режим предназначен для безопасного просмотра кода. Доверьтесь этому окну, чтобы включить все функции. Используйте клавиши навигации для доступа к действиям баннера.",
+      "restrictedModeBannerAriaLabelWorkspace": "Ограниченный режим предназначен для безопасного просмотра кода. Доверьте это рабочее пространство, чтобы включить все функции. Используйте клавиши навигации для доступа к действиям баннера.",
+      "restrictedModeBannerLearnMore": "Узнать больше",
+      "restrictedModeBannerManage": "управлять",
+      "restrictedModeBannerMessageFolder": "Ограниченный режим предназначен для безопасного просмотра кода. Доверьте эту папку, чтобы включить все функции.",
+      "restrictedModeBannerMessageWindow": "Ограниченный режим предназначен для безопасного просмотра кода. Доверьтесь этому окну, чтобы включить все функции.",
+      "restrictedModeBannerMessageWorkspace": "Ограниченный режим предназначен для безопасного просмотра кода. Доверьте это рабочее пространство, чтобы включить все функции.",
+      "startupTrustRequestLearnMore": "Если вы не доверяете автору этих файлов, рекомендуется продолжить использование Ограниченного режима, поскольку эти файлы могут быть вредоносными. Подробности см. в [нашей документации](https://aka.ms/vscode-workspace-trust).",
+      "status.ariaUntrustedFolder": "Ограниченный режим: некоторые функции отключены, поскольку эта папка не является доверенной.",
+      "status.ariaUntrustedWindow": "Ограниченный режим: некоторые функции отключены, поскольку этому окну не доверяют.",
+      "status.ariaUntrustedWorkspace": "Ограниченный режим: некоторые функции отключены, поскольку этому рабочему пространству не доверяют.",
+      "status.tooltipUntrustedFolder2": "Запуск в ограниченном режиме Некоторые [функции отключены]({0}), поскольку эта [папка не является доверенной]({1}).",
+      "status.tooltipUntrustedWindow2": "Запуск в ограниченном режиме Некоторые [функции отключены]({0}), поскольку этому [окну не доверяют]({1}).",
+      "status.tooltipUntrustedWorkspace2": "Запуск в ограниченном режиме Некоторые [функции отключены]({0}), поскольку это [рабочее пространство не является доверенным]({1}).",
+      "status.workspaceName": "имя рабочей области",
+      "status.workspaceNameAria": "Рабочая область: {0}",
+      "status.workspaceNameTooltip": "Текущая рабочая область: {0}",
+      "status.WorkspaceTrust": "Доверие к рабочему пространству",
+      "trustFolderOptionDescription": "Доверьте папку и включите все функции",
+      "trustOption": "Да, я доверяю этому автору(&&Y)",
+      "trustWorkspaceOptionDescription": "Доверьтесь рабочему пространству и включите все функции",
+      "untrusted": "ограниченный режим",
+      "workspaceStartupTrustDetails": "{0} предоставляет функцию автоматического выполнения файлов в этой рабочей области.",
+      "workspaceTrust": "Хотите доверять авторам файлов в этой рабочей области?",
+      "workspaceTrustEditor": "Редактор доверия рабочей области"
+    }
+  }
+}

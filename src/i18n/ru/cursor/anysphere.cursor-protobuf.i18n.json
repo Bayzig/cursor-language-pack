@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "displayName": "Cursor Protocol Buffers",
+      "description": "Обеспечивает подсветку синтаксиса и сопоставление скобок для буферов протокола в курсоре."
+    }
+  }
+}

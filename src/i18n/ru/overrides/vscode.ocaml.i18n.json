@@ -1,0 +1,10 @@
+{
+  "$comment": "Cursor ships OCaml language declarations and source.ocaml grammar, but copied Julia labels into package.nls.json. Correct the display text to match the actual OCaml extension.",
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "displayName": "Основы языка OCaml",
+      "description": "Обеспечивает подсветку синтаксиса и сопоставление скобок для файлов OCaml."
+    }
+  }
+}

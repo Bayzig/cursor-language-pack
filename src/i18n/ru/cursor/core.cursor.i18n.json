@@ -1,0 +1,301 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/workbench/electron-sandbox/actions/developerActions.cursor": {
+      "logDataDirectories": "Каталоги данных журнала",
+      "reloadWindowWithHMR": "Перезагрузить с помощью HMR",
+      "hangRendererThread": "Приостановить поток рендера (30 с)",
+      "devForceNextSmartModeClassifierBlock": "Разработчик: принудительно заблокировать следующий автоматический просмотр.",
+      "devDelayNextSmartModeClassifier": "Разработка: задержка следующей автоматической проверки ({0} секунд)",
+      "restartInTemporaryProfile": "Перезапустить во временном профиле",
+      "startInfiniteComposerSession": "Начать бесконечную сессию Composer",
+      "stopInfiniteComposerSession": "Остановить бесконечную сессию Composer",
+      "devAutoLoginFree": "Разработка: Автоматический вход (бесплатно)",
+      "devAutoLoginProTrial": "Разработка: Автоматический вход в систему (пробная версия Pro)",
+      "devAutoLoginPro": "Разработка: Автологин (Pro)",
+      "devAutoLoginProPlusTrial": "Разработка: автоматический вход в систему (пробная версия Pro Plus)",
+      "devAutoLoginProPlus": "Разработка: автоматический вход (Pro Plus)",
+      "devAutoLoginUltra": "Разработка: Автоматический вход (Ultra)",
+      "devAutoLoginEnterprise": "Разработка: автоматический вход в систему (предприятие)",
+      "devAutoLoginFakeForTesting": "Разработка: Автоматический вход (поддельный токен для тестирования)",
+      "devSetApplicationStorageForTesting": "Разработка: Настройка хранилища приложений (для тестирования)",
+      "devGetApplicationStorageForTesting": "Разработка: Чтение хранилища приложений (для тестирования)",
+      "devIsAgentHostEnabledForTesting": "Разработка: включен ли хост агента (для тестирования).",
+      "devBatchSetApplicationStorageForTesting": "Разработка: Пакетная настройка хранилища приложений (для тестирования).",
+      "devSetComposerModeAutoRun": "Разработка: Установить режим записи AutoRun (для тестирования)",
+      "devGetComposerDataForTesting": "Разработка: чтение и запись данных (для тестирования)",
+      "setAnyrunCluster": "Настройка кластера Anyrun",
+      "devGetAutorunSettingForTesting": "Разработка: прочитать настройки автозапуска (для тестирования).",
+      "devGetLoadedPluginsSummaryForTesting": "Разработка: прочитать сводку загруженного плагина (для тестирования).",
+      "devGetModelConfigForSurfaceForTesting": "Разработка: чтение конфигурации модели интерфейса (для тестирования).",
+      "simulateNewUser": "Выдать себя за нового пользователя"
+    },
+    "vs/workbench/contrib/composer/electron-sandbox/webviewBrowserManager": {
+      "passkeyRequestStalled": "Эта страница ожидает пароля или ключа безопасности. Если вы используете аппаратный ключ безопасности, вставьте его и нажмите, чтобы продолжить.",
+      "passkeyHybridUnsupported": "Для этого входа необходимо получить ключ доступа с мобильного телефона или планшета через QR-код, а браузер Cursor не может отобразить QR-код. Пожалуйста, откройте эту страницу в своем любимом браузере, чтобы продолжить.",
+      "browserContextMenu.openLinkExternalBrowser": "Открыть ссылку в браузере",
+      "browserContextMenu.openLinkNewTab": "Открыть ссылку в новой вкладке",
+      "browserContextMenu.openLinkBackgroundTab": "Открыть ссылку в фоновой вкладке",
+      "browserContextMenu.copyLinkAddress": "Скопировать адрес ссылки",
+      "browserContextMenu.openMediaExternalBrowser": "Открыть медиа в браузере",
+      "browserContextMenu.openMediaNewTab": "Открыть медиа в новой вкладке",
+      "browserContextMenu.copyMediaAddress": "Копировать медиа-адрес",
+      "browserContextMenu.copyImage": "скопировать изображение",
+      "browserContextMenu.back": "Назад",
+      "browserContextMenu.forward": "вперед, продолжать",
+      "browserContextMenu.reload": "Перезагрузить",
+      "browserContextMenu.undo": "Отменить",
+      "browserContextMenu.redo": "восстанавливаться",
+      "browserContextMenu.cut": "резать",
+      "browserContextMenu.copy": "Копировать",
+      "browserContextMenu.paste": "Вставить",
+      "browserContextMenu.selectAll": "Выбрать все",
+      "browserContextMenu.inspectElement": "Проверить элемент"
+    },
+    "vs/workbench/contrib/agents/browser/agentsQuickAccess": {
+      "agents.chatHistory.section.chats": "чат",
+      "agents.chatHistory.section.cloudAgents": "Облачный агент",
+      "agents.chatHistory.noResults": "Чат недоступен",
+      "agents.chatHistory.noResults.filter": "Пожалуйста, попробуйте другой поисковый запрос",
+      "agents.chatHistory.noResults.empty": "Запустите нового агента, он появится здесь",
+      "agents.chatHistory.noResults.aria": "Чат недоступен",
+      "agents.chatHistory.composerAria": "Чат {0}",
+      "agents.chatHistory.backgroundAria": "Облачный агент {0}",
+      "agents.chatHistory.untitledChat": "Безымянный чат",
+      "agents.chatHistory.placeholder": "Поиск чатов и облачных агентов",
+      "agents.chatHistory.help": "Искать историю чата",
+      "agents.mru.noResults": "Недавно использованных агентов нет.",
+      "agents.mru.composerAria": "Агент {0}",
+      "agents.mru.backgroundAria": "Облачный агент {0}",
+      "agents.ctrlTab.draft": "черновик",
+      "agents.mru.placeholder": "Переключение между недавно использованными агентами",
+      "agents.mru.help": "Переключение между недавно использованными агентами"
+    },
+    "vs/workbench/contrib/cursorExampleUtilityHost/electron-sandbox/exampleUtilityHostCommands": {
+      "exampleUtilityHost.echo": "Пример эха служебного хоста",
+      "exampleUtilityHost.echo.ok": "Пример эха служебного хоста: \"{0}\" (туда и обратно {1} мс)",
+      "exampleUtilityHost.echo.err": "Пример сбоя проверки хоста утилиты: {0}",
+      "exampleUtilityHost.ping": "Пример проверки связи с служебным хостом",
+      "exampleUtilityHost.ping.ok": "Пример проверки связи с служебным хостом: время хоста {0}, туда и обратно {1} мс.",
+      "exampleUtilityHost.ping.err": "Пример неудачной проверки связи с служебным хостом: {0}",
+      "exampleUtilityHost.tick": "Пример тика хоста утилиты",
+      "exampleUtilityHost.tick.start": "Пример тика служебного хоста: Ожидание тика…",
+      "exampleUtilityHost.tick.progress": "Пример тика хоста утилиты: {0}/{1} (время хоста {2})",
+      "exampleUtilityHost.tick.ok": "Пример тика хоста утилиты: {0} тактов получено за {1} миллисекунд (время последнего хоста {2})",
+      "exampleUtilityHost.tick.partial": "Пример тика служебного хоста: отменен после тиков {0}/{1}",
+      "exampleUtilityHost.tick.err": "Пример тика служебного хоста: тик не получен (поток завершился досрочно)",
+      "exampleUtilityHost.stressTest.start": "Пример стресс-теста узла утилиты ({0}): получение данных...",
+      "exampleUtilityHost.stressTest.ok": "Пример стресс-теста узла служебной программы ({0}): {1} МБ получено за {2} миллисекунд ({3} МБ/с).",
+      "exampleUtilityHost.stressTest.err": "Пример стресс-теста узла утилит ({0}) не пройден: {1}",
+      "exampleUtilityHost.stressTest": "Пример стресс-теста Utility Host (16 МБ)",
+      "exampleUtilityHost.stressTestLarge": "Пример стресс-теста хоста утилиты большой емкости (63 МБ, ниже ограничения канала в 64 МБ)"
+    },
+    "vs/workbench/contrib/aiConfig/browser/aiconfig.contribution": {
+      "cursorGeneralConfigurationTitle": "общепринятый",
+      "http2.disable.title": "Отключить HTTP/2.0",
+      "http2.disable.description": "Отключите HTTP/2 для всех запросов и вместо этого используйте HTTP/1.1. Это увеличивает использование ресурсов и задержку, но полезно для корпоративных прокси-серверов, перехватывающих HTTP/2.",
+      "debug.timeoutPrevention.title": "Защита от отладки по тайм-ауту",
+      "cursor.composer.planTextSizeScale.matchAgentChat": "В соответствии с чатом агента",
+      "cursor.composer.planTextSizeScale.small": "Маленький",
+      "cursor.composer.planTextSizeScale.defaultSize": "по умолчанию",
+      "cursor.composer.planTextSizeScale.large": "большой",
+      "cursor.composer.planTextSizeScale.extraLarge": "очень большой",
+      "cursor.composer.conversationDensity.toolSummary": "компактный",
+      "cursor.composer.conversationDensity.compactRows": "сбалансированный",
+      "cursor.composer.conversationDensity.detailed": "подробный",
+      "cursor.composer.editorConversationDensity.toolSummary": "компактный",
+      "cursor.composer.editorConversationDensity.compactRows": "сбалансированный",
+      "cursor.composer.editorConversationDensity.detailed": "подробный",
+      "instantGrep.indexRepositories.title": "Индексирование репозиториев для Instant Grep",
+      "instantGrep.indexRepositories.policyDescription": "Определяет, создает ли Cursor индексы хранилища локально для Instant Grep. Отключение этой политики предотвращает индексацию хранилища на управляемых устройствах."
+    },
+    "vs/workbench/contrib/aiSettings/browser/components/settings/settingsRulesTab": {
+      "noWorkspace": "Сначала откройте папку рабочей области.",
+      "importGithubRule": "Импортируйте правила проекта из GitHub/GitLab.",
+      "githubUrlPlaceholder": "https://github.com/owner/repository.git",
+      "githubUrlPrompt": "Введите URL-адрес репозитория GitHub/GitLab, в который вы хотите импортировать правила проекта.",
+      "emptyUrl": "URL не может быть пустым",
+      "invalidGitRepoUrl": "Введите действительный URL-адрес репозитория GitHub/GitLab.",
+      "invalidRepoUrl": "Невозможно извлечь имя репозитория из URL.",
+      "ruleAlreadyExists": "Правило импорта для \"{0}\" уже существует в `.cursor/rules/imported/{0}`.",
+      "cloningRule": "Правила клонирования из GitHub/GitLab...",
+      "rulesImported": "Файлы правил проекта {1} были импортированы из \"{0}\" в `.cursor/rules/imported/{0}`.",
+      "importFailed": "Не удалось импортировать правила из GitHub/GitLab: {0}.",
+      "teamContentDashboard": "Команду {0} можно создавать и редактировать на панели управления курсором.",
+      "openDashboard": "Открыть панель управления",
+      "noWorkspaceForProjectRule": "Правила проекта невозможно создать без рабочей области. Пожалуйста, сначала откройте папку.",
+      "createRuleFailed": "Не удалось создать правило. Повторите попытку."
+    },
+    "vs/workbench/contrib/cursorBlame/browser/cursorBlame.contribution": {
+      "cursorBlame.openFileBlameTitle": "Открыть файл",
+      "cursorBlame.category": "Cursor Blame",
+      "cursorBlame.openCommitTitle": "Просмотр материалов",
+      "cursorBlame.pasteCommitHash": "Вставить хеш фиксации",
+      "cursorBlame.viewCommitTitle": "Просмотр материалов",
+      "cursorBlame.noGit": "репозиторий git не найден",
+      "cursorBlame.uncommittedLine": "Эта поездка еще не отправлена",
+      "cursorBlame.explorerContextMenu": "Cursor Blame",
+      "cursorBlameSubmenu": "Cursor Blame",
+      "toggleFileBlame": "Переключить файл",
+      "cursorBlameConfigurationTitle": "Cursor Blame",
+      "cursor.blame.hoverDelay": "Управляет задержкой (в миллисекундах) перед появлением подсказки при наведении на панели «Виновник курсора». Если не установлено, используется `#editor.hover.delay#` и составляет не менее 500 миллисекунд."
+    },
+    "vs/workbench/contrib/composer/browser/browserEditor.contribution": {
+      "closeBrowserTab.message": "Закрыть вкладку браузера",
+      "closeBrowserTab.detail": "Этот браузер создан агентом. Отключение может повлиять на текущие чаты.",
+      "closeBrowserTab.hide": "&Скрывать",
+      "closeBrowserTab.close": "&Закрывать",
+      "openBrowser": "Открыть браузер",
+      "newBrowserTab": "Создать новую вкладку браузера",
+      "reloadBrowserTab": "Перезагрузить вкладку браузера",
+      "focusBrowserLocationBar": "Сосредоточьтесь на адресной строке браузера",
+      "openCursorWebsite": "Откройте курсор.com в своем браузере."
+    },
+    "vs/workbench/contrib/cursorOrigin/browser/cursorOrigin.contribution": {
+      "cursorOrigin.category": "Cursor Origin",
+      "cursorOrigin.noFile": "На данный момент открытых файлов нет.",
+      "cursorOrigin.noLink": "Невозможно создать ссылку на курсор.com. Откройте файл в репозитории git с подходящим удаленным репозиторием.",
+      "cursorOrigin.copyCodeLink": "Скопируйте ссылку на курсор.com (включая выделение)",
+      "cursorOrigin.copyCodeLinkWithoutRange": "Скопировать ссылку на курсор.com (только файл)",
+      "cursorOrigin.copyCodeLink.menu": "Скопировать ссылку на курсор.com",
+      "cursorOrigin.copyCodeLinkExplorer.menu": "Скопировать ссылку на курсор.com",
+      "cursorOrigin.copyCodeLinkEditorTitle.menu": "Скопировать ссылку на курсор.com",
+      "cursorOrigin.copyCodeLinkLineNumber.menu": "Скопировать ссылку на курсор.com"
+    },
+    "vs/workbench/contrib/cursorMarkdownPlanEditor/browser/markdownPlanEditorActions": {
+      "toggleMarkdownPlanEditorMode": "Переключить режим редактора",
+      "markdownPlanEditor": "Редактор плана Markdown",
+      "acceptPlan": "План сборки",
+      "find": "Находить",
+      "findNext": "Найти следующий",
+      "findPrevious": "Найти предыдущий",
+      "closeFindWidget": "Закройте виджет «Найти»"
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursorAuthConfigurationTitle": "Cursor Auth",
+      "cursor.allowedTeamId": "Указывает идентификатор группы, к которой должен принадлежать пользователь, чтобы использовать курсор. Если настроенный и вошедший в систему пользователь не принадлежит к команде, Cursor автоматически выйдет из системы.",
+      "cursor.signInEnforcement": "При включении через управление устройствами (MDM) серверная часть Cursor откажется выдавать или обновлять сеансы входа в систему для учетных записей, которые не принадлежат ни к одной из настроенных разрешенных организаций, команд, почтовых ящиков или доменов почтовых ящиков.",
+      "cursor.allowedOrganizationIds": "Разделенный запятыми список идентификаторов организаций Cursor (установленных с помощью управления устройством), которым разрешен вход на этом устройстве.",
+      "cursor.allowedTeamIds": "Разделенный запятыми список идентификаторов команд Cursor (устанавливаемых администратором устройства), которым разрешен вход на этом устройстве. Переопределяет отдельную политику AllowedTeamId; оба вступят в силу.",
+      "cursor.allowedLoginEmails": "Разделенный запятыми список точных адресов электронной почты учетной записи, которым разрешен вход на этом устройстве (задается через администратора устройства). Игнорируйте регистр при сравнении.",
+      "cursor.allowedLoginDomains": "Список доменов электронной почты, разделенных запятыми (например, example.com), которым разрешен вход на этом устройстве (устанавливается через управление устройством). Точно совпадают только доменные имена; субдомены не включаются неявно."
+    },
+    "vs/workbench/contrib/terminalContrib/cursorExternalAgentStatus/browser/terminal.externalAgentStatus.contribution": {
+      "workbench.action.terminal.externalAgentActions": "Операции внешнего агента",
+      "workbench.action.terminal.externalAgentSecondOpinion": "второе мнение",
+      "workbench.action.terminal.externalAgentAsk": "боковой чат",
+      "workbench.action.terminal.externalAgentAsk.menu": "боковой чат",
+      "workbench.action.terminal.externalAgentSecondOpinion.menu": "второе мнение",
+      "workbench.action.terminal.externalAgentActions.title": "Операции внешнего агента"
+    },
+    "vs/workbench/services/agent/browser/agentExecProviderService": {
+      "agentExecSimulatedStreamStartTimeoutTitle": "Тайм-аут начала потока агентов",
+      "agentExecSimulatedStreamStartTimeoutDetail": "Хост расширения не ответил вовремя. Пожалуйста, перезагрузите окно, чтобы продолжить.",
+      "reloadWindow": "окно перезагрузки",
+      "agentExecTimeoutTitle": "Тайм-аут выполнения агента",
+      "agentExecTimeoutDetail": "Поставщик выполнения агента не ответил своевременно. Это может указывать на то, что хост расширения не работает или не отвечает.",
+      "toggleSimulatedAgentExecStreamStartTimeout": "Разработчики: переключите поток выполнения агента, чтобы запустить симуляцию тайм-аута (только в разработке)."
+    },
+    "vs/workbench/contrib/agents/browser/components/AgentSidebarUpdateButton": {
+      "agentSidebarUpdateButton.tooltip": "Перезапустите Cursor, чтобы установить ожидающие обновления.",
+      "agentSidebarUpdateButton.tooltipWithVersion": "Перезапустите Cursor, чтобы установить ожидающие обновления для {0}.",
+      "agentSidebarUpdateButton.installingTooltip": "Установка обновлений. Курсор автоматически закроется и снова откроется.",
+      "agentSidebarUpdateButton.label": "возобновлять",
+      "agentSidebarUpdateButton.installingLabel": "Установка"
+    },
+    "vs/workbench/contrib/cursorAiMarkdown/browser/chatFileReferenceContextMenu": {
+      "chatRevealInWindows": "Показать в проводнике",
+      "chatRevealInMac": "Показать в Finder",
+      "chatOpenContainer": "Откройте папку, в которой он находится",
+      "chatFileAddToChat": "Добавить в чат",
+      "copyPath": "копировать путь"
+    },
+    "vs/workbench/services/agent/electron-sandbox/localAgentPromptQualityUrlHandler": {
+      "localAgentPromptQuality.invalidUploadLink": "Ссылка на загрузку подсказки качества недействительна.",
+      "localAgentPromptQuality.uploadFailed": "Не удалось загрузить запуск локального агента в службу Prompt Quality: {0}.",
+      "localAgentPromptQuality.confirmTitle": "Загрузить этот локальный агент в службу Prompt Quality?",
+      "localAgentPromptQuality.confirmDetail": "При этом загружаются слова подсказки, код и контекст, параметры и результаты инструмента, а также ответы модели. Prompt Quality сохраняет эти данные для внутренней отладки.",
+      "localAgentPromptQuality.confirmButton": "Загрузите в быстрое качество"
+    },
+    "vs/workbench/browser/actions/agentLayoutQuickMenu/agentLayoutQuickMenuTypes": {
+      "agentLayoutMenu.layout.agent": "Макет • Слева",
+      "agentLayoutMenu.layout.editor": "Расположение • Справа",
+      "agentLayoutMenu.layout.zen": "Планировка • Дзен",
+      "agentLayoutMenu.layout.browser": "Браузер"
+    },
+    "vs/workbench/contrib/composer/browser/capabilities/chimes": {
+      "chimes.unsafePath.unc": "По соображениям безопасности пользовательский путь звукового сигнала не может быть сетевым (UNC) путем. Пожалуйста, используйте локальный путь к файлу.",
+      "chimes.unsafePath.url": "Пользовательский путь звукового сигнала не может быть URL-адресом. Пожалуйста, используйте локальный путь к файлу.",
+      "chimes.untrustedWorkspace": "Пользовательский звуковой сигнал настроен в настройках рабочей области, но рабочая область не является доверенной. Пользовательские мелодии будут игнорироваться.",
+      "chimes.source": "Cursor Chimes"
+    },
+    "vs/workbench/contrib/agents/browser/agentsActions": {
+      "all-agents": "Все агенты",
+      "quickOpenPreviousRecentlyUsedAgent": "Быстро открыть последний недавно использованный агент",
+      "quickOpenLeastRecentlyUsedAgent": "Быстро открыть агент, который давно не использовался"
+    },
+    "vs/workbench/contrib/cursorLocalTrace/browser/cursorLocalTrace.contribution": {
+      "cursorLocalTraceModeConfigurationTitle": "локальный режим отслеживания",
+      "cursorLocalTraceMode.settingTitle": "локальный режим отслеживания",
+      "cursorLocalTraceMode": "Если этот параметр включен, маркеры и измерения производительности (например, производительность Chrome DevTools) регистрируются локально, а RPC VS Code зеркально отображаются на вкладке «Сеть» DevTools."
+    },
+    "vs/workbench/contrib/cursorMarkdownPlanEditor/browser/usePlanEditorState": {
+      "markdownPlanEditor.fileChangedWhileDirty": "Содержимое файла обновлено. Вы хотите перезаписать файл с вашими изменениями или отменить изменения?",
+      "overwrite": "крышка",
+      "revert": "снижение"
+    },
+    "vs/workbench/contrib/terminalContrib/cursorPromptBar/browser/terminalPromptBarContextKeys": {
+      "terminalPromptBarVisible": "Видна ли в данный момент панель подсказок терминала",
+      "terminalPromptBarCanCancelGeneration": "Можно ли отменить создание панели подсказок терминала?",
+      "terminalPromptBarCanRejectGeneration": "Можно ли отклонить команды, генерируемые панелью подсказок терминала?"
+    },
+    "vs/workbench/browser/actions/agentLayoutQuickMenu/agentLayoutQuickMenuComponents": {
+      "agentLayoutMenu.add": "добавить в",
+      "agentLayoutMenu.moreActions": "Дополнительные действия"
+    },
+    "vs/workbench/contrib/agents/common/agentsContextKeys": {
+      "agentsPaneFocused": "Содержит ли боковая панель агента в данный момент фокус клавиатуры.",
+      "agentNavigationMode": "Независимо от того, находитесь ли вы в настоящее время в режиме навигации агента (удерживайте и отпустите для переключения)."
+    },
+    "vs/workbench/contrib/composer/browser/composer.contribution": {
+      "cursor ai": "Cursor AI",
+      "composerEditor": "Cursor AI"
+    },
+    "vs/workbench/contrib/composer/browser/utils/firstSteerNotice": {
+      "firstSteerNoticeTitle": "Ваше сообщение запустило агент и не остановило его работу.",
+      "firstSteerNoticeDescription": "Новое сообщение установлено в качестве руководства.",
+      "firstSteerNoticeOpenSettings": "Открыть настройки"
+    },
+    "vs/workbench/contrib/composer/browser/composerMessageStorageService": {
+      "checkpointHydrationErrorTitle": "Не удалось загрузить разговор.",
+      "checkpointHydrationErrorDetail": "Данные контрольной точки диалога могут быть повреждены. Вы можете начать новый разговор или попробовать перезагрузить окно."
+    },
+    "vs/workbench/contrib/composer/electron-sandbox/browserAutomation.contribution": {
+      "crashBrowserWebviewRenderer": "Разработчик: Сбой браузера, средство рендеринга Webview.",
+      "orphanBrowserViewEntry": "Разработчик: потерянные записи просмотра браузера"
+    },
+    "vs/workbench/contrib/cursorAiFeedback/browser/aiFeedbackActions": {
+      "miReportIssue": "&Сообщить о проблеме(&I)",
+      "miGiveFeedback": "&&F предоставить отзыв..."
+    },
+    "vs/workbench/contrib/terminalContrib/cursorCliPrompt/browser/terminal.cursorCliPrompt.contribution": {
+      "cursor.cliAlreadyInstalled": "Курсор CLI установлен.",
+      "cursor.installCli": "Установите интерфейс командной строки курсора"
+    },
+    "vs/workbench/browser/actions/agentLayoutQuickMenu/agentLayoutQuickMenuState": {
+      "agentLayoutMenu.savedLayoutName": "Макет {0}"
+    },
+    "vs/workbench/browser/parts/editor/editorActions.cursor": {
+      "evenEditorGroupsExcludingAgent": "Сбросить размер группы редакторов (без агентов)"
+    },
+    "vs/workbench/contrib/composer/browser/transcript/composerTranscriptToolRuntime": {
+      "composerTranscript.openFileFailed": "Невозможно открыть {0}"
+    },
+    "vs/workbench/contrib/terminalContrib/cursorDeveloper/browser/terminal.cursorDeveloper.contribution": {
+      "workbench.action.terminal.debugCheckExecutionServiceVersion": "Отладка: проверка версии службы выполнения терминала"
+    },
+    "vs/workbench/electron-sandbox/actions/devRefreshTeamAdminSettingsAction.cursor": {
+      "devRefreshTeamAdminSettings": "Разработка: обновление настроек администратора команды (для тестирования)."
+    }
+  }
+}

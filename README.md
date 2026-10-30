@@ -1,6 +1,10 @@
 # Cursor Language Pack
 
-Cursor 中文语言包，支持简体中文和使用台湾用词的繁体中文，覆盖编辑器、设置和智能体界面。
+Cursor 多语言语言包，支持简体中文、使用台湾用词的繁体中文和俄语（Русский），覆盖编辑器、设置和智能体界面。
+
+A multilingual language pack for Cursor IDE: Simplified Chinese, Traditional Chinese (Taiwan), and Russian — covering the editor, settings, and agent UI.
+
+Языковой пакет для Cursor IDE: упрощённый и традиционный китайский, а также **русский язык** — интерфейс редактора, настройки и агент.
 
 [English](docs/README.en.md)
 
@@ -50,8 +54,10 @@ node bin/cli.mjs preview --locale=zh-tw
 ## 扩展安装
 
 1. 卸载其他语言包，避免与官方 VS Code 中文包冲突。
-2. 在扩展中搜索 **Cursor Language Pack** 或 **汉化**，也可从 [GitHub Releases](https://github.com/polang233/cursor-language-pack/releases) 下载 VSIX，通过 **Extensions: Install from VSIX…** 安装。
-3. 命令面板运行 **Language Pack: Select Display Language**，选简体或繁体，完全退出 Cursor 后重新打开。
+2. 在扩展中搜索 **Cursor Language Pack**、**汉化** 或 **русский язык**，也可从 [GitHub Releases](https://github.com/polang233/cursor-language-pack/releases) 下载 VSIX，通过 **Extensions: Install from VSIX…** 安装。
+3. 命令面板运行 **Language Pack: Select Display Language**，选择简体中文、繁體中文或 Русский，完全退出 Cursor 后重新打开。
+
+Также можно выбрать русский через команду `Developer: Configure Display Language` или CLI: `npx @polang233/cursor-language-pack translate --locale=ru`.
 
 扩展 id 保持 `polang233.cursor-language-pack`。也可用设置 `cursorLanguagePack.language` 选择 `auto`、`zh-cn`、`zh-tw` 或 `en`，切换后重启。仅安装扩展时，部分写死在程序里的英文需要命令行安装才能翻译。
 

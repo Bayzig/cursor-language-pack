@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/editor/common/standaloneStrings": {
+      "chatEditing.navigation": "Перемещайтесь между изменениями в редакторе с помощью кнопок «Предыдущий» {0}, «Следующий» {1} и принимайте {2}, отклоняйте {3} или просматривайте различия {4} для текущих изменений."
+    },
+    "vs/editor/contrib/gotoError/browser/gotoErrorWidget": {
+      "marker aria": "{0} в {1}."
+    },
+    "vs/editor/contrib/hover/browser/markdownHoverParticipant": {
+      "stopped rendering": "Рендеринг очень длинных строк приостановлен по соображениям производительности. Это можно настроить через «editor.stopRenderingLineAfter».",
+      "too many characters": "Токенизация очень длинных строк была пропущена по соображениям производительности. Это настраивается через «editor.maxTokenizationLineLength»."
+    },
+    "vs/platform/extensionManagement/common/abstractExtensionManagementService": {
+      "notFoundCompatibleDependency": "Расширение «{0}» невозможно установить, поскольку оно несовместимо с текущей версией {1} (версия {2}, версия VS Code {3})."
+    },
+    "vs/platform/telemetry/common/telemetryService": {
+      "telemetry.docsStatement": "Узнайте больше о [Политике конфиденциальности Cursor]({0}) и [Политике безопасности Cursor]({1})."
+    },
+    "vs/workbench/api/browser/statusBarExtensionPoint": {
+      "text": "Текст, отображаемый для этой записи. Значки могут быть встроены в текст с использованием синтаксиса `$(<имя>)`, например «Hello $(globe)!»"
+    },
+    "vs/workbench/browser/workbench.contribution": {
+      "workbench.editor.editorActionsLocation.titleBar": "Показывает действия редактора в строке заголовка окна.",
+      "navigationControlEnabled": "Управляет отображением элементов управления навигацией в строке заголовка.",
+      "layoutControlEnabled": "Определяет, отображаются ли элементы управления макетом в строке заголовка.",
+      "window.commandCenter": "Отобразите панель запуска команд вместе с заголовком окна.",
+      "window.menuBarVisibility.compact": "Меню отображаются в виде компактных кнопок на боковой панели. Это значение игнорируется, если {0} равно {1}."
+    },
+    "vs/workbench/contrib/comments/browser/commentsAccessibility": {
+      "escape": "- Закрыть комментарии (Побег)"
+    },
+    "vs/workbench/contrib/files/browser/files.contribution": {
+      "explorer.autoRevealExclude.when": "Выполните дополнительные проверки одноуровневых элементов совпадающих файлов. Используйте $(basename) в качестве переменной, соответствующей имени файла."
+    },
+    "vs/workbench/contrib/mcp/common/mcpRegistry": {
+      "mcp.trust.details": "{0} обнаружил сервер протокола контекста модели (MCP) от {1} (`{2}`). {0} может использовать свои функции в чате. Разрешить запуск серверов MCP из {3}?"
+    },
+    "vs/workbench/contrib/notebook/browser/contrib/cellDiagnostics/diagnosticCellStatusBarContrib": {
+      "notebook.cell.status.diagnostic": "Быстрое действие {0}"
+    },
+    "vs/workbench/contrib/scm/browser/scmHistoryViewPane": {
+      "scmGraphViewOutdated": "Используйте операцию обновления ($(refresh)) для обновления этой диаграммы."
+    },
+    "vs/workbench/contrib/share/browser/share.contribution": {
+      "experimental.share.enabled": "Определяет, включена ли экспериментальная команда «поделиться»."
+    },
+    "vs/workbench/contrib/tasks/browser/taskQuickPick": {
+      "TaskQuickPick.changeSettingsOptions": "Обнаружение задач $(gear) {0} отключено. Включить обнаружение задач {1}..."
+    },
+    "vs/workbench/contrib/terminalContrib/suggest/common/terminalSuggestConfiguration": {
+      "suggest.enabled": "Включает предложения IntelliSense для терминала (предварительная версия) в поддерживаемых оболочках ({0}), если для {1} установлено значение {2}."
+    },
+    "vs/workbench/services/auxiliaryWindow/browser/auxiliaryWindowService": {
+      "unableToOpenWindowDetail": "Чтобы избежать повторения этой проблемы, пожалуйста, разрешите всплывающие окна для этого сайта."
+    },
+    "vs/workbench/services/textfile/browser/textFileService": {
+      "fileBinaryError": "{0}"
+    }
+  }
+}

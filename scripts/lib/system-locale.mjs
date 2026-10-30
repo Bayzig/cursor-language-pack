@@ -1,13 +1,20 @@
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 
-/** Map an OS language to one of the two translations shipped by this package. */
+/** Map an OS language to one of the translations shipped by this package. */
 export function chineseLocale(language) {
   const tag = String(language ?? '').trim().split(/[.:@]/)[0].replaceAll('_', '-').toLowerCase();
   if (tag === 'zh-cht' || tag === 'cht' || /^(tw|hk|mo)$/.test(tag)) return 'zh-tw';
   if (/(^|-)hans($|-)/.test(tag)) return 'zh-cn';
   if (/(^|-)hant($|-)/.test(tag) || /(^|-)(tw|hk|mo)($|-)/.test(tag)) return 'zh-tw';
   return 'zh-cn';
+}
+
+/** Map an OS language to a locale this pack supports, preferring Russian. */
+export function pickLocale(language) {
+  const tag = String(language ?? '').trim().split(/[.:@]/)[0].replaceAll('_', '-').toLowerCase();
+  if (/^ru($|-)/.test(tag)) return 'ru';
+  return chineseLocale(tag);
 }
 
 /** Read the display language, rather than inferring it from the time zone. */

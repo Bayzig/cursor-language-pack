@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "displayName": "AI Completions",
+      "description": "Получите дополнения из модели языка кода."
+    }
+  }
+}

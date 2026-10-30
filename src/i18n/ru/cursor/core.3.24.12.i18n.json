@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/platform/agentHarness/common/agentHostUpdate.config.contribution": {
+      "agentHostConfigurationTitle": "Интеллектуальный хост",
+      "agentHostUpdateMode": "Контролирует, обновляется ли программа, отвечающая за ход локального агента, между версиями Курсора. Обновления загружаются из службы Cursor и вступают в силу на следующем ходу агента.",
+      "agentHostUpdateMode.default": "Следовать update.mode: обновления будут происходить, если обновления курсора не отключены.",
+      "agentHostUpdateMode.none": "Никогда не обновляйте, продолжайте использовать агент, поставляемый с текущей версией Cursor.",
+      "agentHostUpdateMode.on": "Обновления происходят, даже если обновления курсора отключены."
+    },
+    "vs/platform/cursorStartupHttp/common/startupConnectTransportSetting": {
+      "cursor.experimental.startupConnectTransport": "Экспериментальные возможности. Серверный шлюз входа открывается при запуске окна, а запросы на подключение обрабатываются основным процессом без необходимости ожидания расширения Cursor Always Local. Этот эксперимент не вступит в силу, если ваша учетная запись также не будет включена. Оно вступит в силу после перезагрузки окна."
+    },
+    "vs/workbench/browser/parts/editor/cloneRepoFromEmptyScreen": {
+      "emptyScreen.cloneRepo.downloadGit": "Скачать Git",
+      "emptyScreen.cloneRepo.gitUnavailable": "Для клонирования репозитория требуется Git. Установите Git или включите встроенное расширение Git, а затем перезапустите Cursor."
+    },
+    "vs/workbench/contrib/aiConfig/browser/aiconfig.contribution": {
+      "agent.remoteWorkspaceAuthorities.description": "При настройке управления устройством агент отключается в локальном окне и включается только в удаленной рабочей области. Если значение пустое, разрешены все удаленные адреса; в противном случае заполните шаблоны, разделенные запятыми, без учета регистра и * можно использовать подстановочные знаки (например, ssh-remote+127.0.0.1*).",
+      "agent.remoteWorkspaceAuthorities.policyDescription": "Требуется, чтобы агент работал в удаленном рабочем пространстве, что может быть ограничено шаблоном удаленного адреса, разделенным запятыми. Пустое значение разрешает все удаленные адреса.",
+      "agent.remoteWorkspaceAuthorities.title": "Адрес удаленной рабочей области агента"
+    },
+    "vs/workbench/contrib/composer/browser/components/PromptEditInput.react": {
+      "composer.promptEditInput.ariaLabel": "Редактировать сообщение"
+    },
+    "vs/workbench/contrib/composer/browser/composerLogService": {
+      "cursorComposerLoggerName": "Cursor Composer"
+    },
+    "vs/workbench/contrib/composer/browser/inlineDiffSuppressionNotification": {
+      "inlineDiff.disableProtection": "Отключить защиту",
+      "inlineDiff.tooManyChanges": "Встроенные различия для последних изменений были скрыты, поскольку изменений было слишком много для отображения."
+    },
+    "vs/workbench/contrib/composer/browser/promptInputTrays/PromptInputAnchoredTrayHovercard.react": {
+      "composer.anchoredTray.previewAriaLabel": "Предварительный просмотр {0}"
+    },
+    "vs/workbench/contrib/composer/browser/realtimeVoice/realtimeVoiceTranscriptEditor": {
+      "composer.realtimeVoice.transcriptEditor": "голосовой вызов"
+    },
+    "vs/workbench/contrib/tracing/electron-sandbox/tracing.contribution": {
+      "captureDebuggingDataNotePlaceholder": "Что пошло не так? (необязательный)"
+    },
+    "vs/workbench/contrib/ui/browser/aiInput/plugins/mentions/MentionNode": {
+      "mentionChip.removeMention": "Удалить упоминание"
+    },
+    "vs/workbench/contrib/update/browser/update": {
+      "updateDidNotInstallRetrying": "Пользователю {0} не удалось завершить обновление до версии {1}. Обновления загружаются снова."
+    },
+    "vs/workbench/services/ai/common/backendUrl": {
+      "isLocalBackend": "Указывает ли клиент на серверную часть, работающую на этом компьютере"
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursor.xaiIdentity.enabled": "При включении через управление устройствами (MDM) Cursor входит в систему через xAI (auth.x.ai) вместо учетной записи Cursor и проверяет токен xAI на этом устройстве."
+    }
+  }
+}

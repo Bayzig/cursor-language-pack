@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "vs/workbench/contrib/composer/browser/promptInput/pathless-video-toast": {
+      "pathlessVideoRejected": "Это видео невозможно прикрепить. Пожалуйста, сохраните его как файл, прежде чем прикреплять его снова.",
+      "pathlessDocumentRejected": "Этот документ невозможно прикрепить. Пожалуйста, сохраните его как файл, прежде чем прикреплять его снова.",
+      "cloudUnsupportedAttachmentRejected": "Этот файл невозможно прикрепить к облачному агенту."
+    },
+    "vs/workbench/services/agentData/browser/queueItemEditSaves": {
+      "queuedMessageUpdateFailed": "Не удалось обновить сообщения в очереди."
+    },
+    "vs/workbench/services/cursorAuth/browser/authenticationService.contribution": {
+      "cursorManagedDeploymentConfigurationTitle": "Управляемое развертывание",
+      "cursor.deployment.backendUrl": "Применяется только к Cursor Orbit: DeploymentId Указывает источник HTTPS развернутого API, установленный системой управления устройствами. Необходимый.",
+      "cursor.deployment.websiteUrl": "Только для Cursor Orbit: источник HTTPS для этого веб-сайта развертывания, установленный системой управления устройствами. Необходимый.",
+      "cursor.deployment.issuer": "Применимо только к Cursor Orbit: эмитент токена входа в систему развертывания должен быть URL-адресом HTTPS, который точно совпадает с утверждением token iss, установленным системой управления устройствами. Необходимый.",
+      "cursor.deployment.authorizationEndpoint": "Только для Cursor Orbit: URL-адрес HTTPS конечной точки авторизации OAuth этого развертывания, заданный системой управления устройствами. Необходимый.",
+      "cursor.deployment.tokenEndpoint": "Применяется только к Cursor Orbit: URL-адрес HTTPS, по которому развертывается конечная точка токена OAuth, должен быть того же источника, что и эмитент, и установлен системой управления устройствами. Необходимый.",
+      "cursor.deployment.revocationEndpoint": "Применимо только к Cursor Orbit: URL-адрес HTTPS развернутой конечной точки отзыва OAuth должен быть из того же источника, что и эмитент, и установлен системой управления устройствами. Необходимый.",
+      "cursor.deployment.clientId": "Только для Cursor Orbit: идентификатор OAuth-клиента Cursor в поставщике удостоверений этого развертывания, для которого токен является аудиторией, установленный системой управления устройством. Необходимый.",
+      "cursor.deployment.emailDomains": "Только для Cursor Orbit: домены электронной почты учетной записи, которым разрешен вход в это развертывание, разделены запятой, поддерживаются только точные совпадения, установленные управлением устройствами. Необходимый."
+    },
+    "vs/workbench/services/workspaceConnection/browser/workspaceConnectionService": {
+      "workspaceConnection.reconnectFailedNamed": "Повторное подключение не удалось. '{0}' по-прежнему отключен.",
+      "workspaceConnection.reconnectGaveUpNamed": "Невозможно повторно подключиться к '{0}'."
+    }
+  }
+}

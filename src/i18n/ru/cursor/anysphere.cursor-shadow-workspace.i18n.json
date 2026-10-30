@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "displayName": "Cursor Shadow Workspace",
+      "description": "Управляйте скрытым локальным окном, чтобы агент ИИ мог его отшлифовать, прежде чем показывать вам код."
+    }
+  }
+}

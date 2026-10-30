@@ -1,0 +1,13 @@
+{
+  "$comment": "Package-manifest translations supplementing the pinned vscode-loc baseline. package.nls.json keys belong in contents.package.",
+  "version": "1.0.0",
+  "contents": {
+    "package": {
+      "typescript.reselectNodeVersion": "Настройка пользовательских предпочтений пути к узлу",
+      "configuration.tsserver.experimental.useBundledNode": "Запустите сервер TypeScript, используя встроенную среду выполнения Node.js. Если этот параметр отключен, используется среда выполнения Electron Node.js. Пользовательские пути Node.js, настроенные с помощью typescript.tsserver.nodePath, переопределяют этот параметр.",
+      "configuration.tsserver.experimental.useBundledNode.unifiedDeprecationMessage": "Этот параметр устарел. Вместо этого используйте `#js/ts.tsserver.experimental.useBundledNode#`.",
+      "walkthroughs.nodejsWelcome.makeJsFile.description": "Давайте напишем наш первый файл JavaScript. Необходимо создать и сохранить новый файл с расширением ``.js`` в конце имени файла.\n[Создать файл JavaScript](команда:javascript-walkthrough.commands.createJsFile)",
+      "walkthroughs.nodejsWelcome.debugJsFile.description": "После установки Node.js вы можете запустить программу JavaScript, набрав в терминале ``node yourfilename.js``.\nЕще один простой способ запустить программу Node.js — использовать отладчик VS Code, который может запускать ваш код, приостанавливать его в разных точках и помогать вам пошагово анализировать происходящее.\n[Начать отладку](команда:javascript-walkthrough.commands.debugJsFile)"
+    }
+  }
+}

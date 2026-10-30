@@ -1,0 +1,18 @@
+{
+  "Display language set to {0}. Restart Cursor to apply it. The language pack stays installed; switch again anytime without reinstalling.": "Язык отображения установлен на {0}. Перезапустите курсор, чтобы применить его. Языковой пакет остается установленным; переключитесь снова в любое время без переустановки.",
+  "{0} Quit and start Cursor again.": "{0} Выйдите и перезапустите Cursor.",
+  "Restart now": "Перезапустить сейчас",
+  "Later": "Позже",
+  "The display language is already {0}.": "Язык отображения уже {0}.",
+  "Could not write {0}: {1}. Run \"Configure Display Language\" from the Command Palette instead.": "Невозможно написать {0}: {1}. Вместо этого используйте «Настроить язык отображения» на панели команд.",
+  "Cursor Language Pack": "Языковой пакет курсора",
+  "Switch language only — does not uninstall the pack. Restart required.": "Только переключение языка — пакет не удаляется. Требуется перезагрузка.",
+  "Applies workbench and Cursor UI. The pack stays installed — switch languages anytime without reinstalling.": "Действует как на тело редактора, так и на интерфейс записи курсора в ядро. Языковой пакет по-прежнему сохраняется, и его можно переключить в любой момент без переустановки.",
+  "Built-in English. Menus, Settings and other Cursor UI all return to English. The pack stays installed — pick a language again later, no reinstall.": "Встроенный английский. Меню, настройки и другие интерфейсы курсора будут восстановлены на английском языке. Языковой пакет по-прежнему сохраняется, и вы можете выбрать китайский позже, не переустанавливая его.",
+  "current": "текущий",
+  "Show in Extensions": "Показать в списке расширений",
+  "Do not ask again": "Больше не спрашивать",
+  "{0} also provides the workbench translations for a language this pack covers. Only one of them can win, and which one is not stable across restarts. Uninstall the other pack.": "{0} также предоставляет переводы текста редактора для языков, входящих в этот языковой пакет. Вступает в силу только один из двух, причем какой из них вступает в силу, не определяется после каждого перезапуска. Пожалуйста, удалите другой языковой пакет.",
+  "Cursor Language Pack is installed ({0}), but the display language is still {1}.": "Языковой пакет курсора установлен ({0}), но текущим языком интерфейса по-прежнему является {1}.",
+  "Select language": "Выберите язык"
+}

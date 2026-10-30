@@ -1,7 +1,7 @@
 {
   "name": "@polang233/cursor-language-pack",
   "version": "1.1.2",
-  "description": "Cursor 简体/繁体中文汉化工具，自动选择系统语言，支持一键安装与恢复。",
+  "description": "Cursor 多语言汉化工具，支持简体中文、繁体中文和俄语，自动选择系统语言，支持一键安装与恢复。 / Multilingual localization tool for Cursor (Simplified & Traditional Chinese, Russian).",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -56,26 +56,19 @@
     "scripts/translate-install.mjs",
     "src/extension/main.cjs",
     "src/i18n/zh-cn/hardcoded.json",
+    "src/i18n/ru/hardcoded.json",
     "src/i18n/zh-tw/hardcoded.json",
     "assets/language-pack.vsix",
     "config.json",
     "LICENSE",
     "NOTICE",
     "src/i18n/zh-cn/commerce.json",
+    "src/i18n/ru/commerce.json",
     "src/i18n/zh-tw/commerce.json"
   ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [
-    "cursor",
-    "汉化",
-    "中文语言包",
-    "localization",
-    "cli",
-    "chinese",
-    "zh-cn",
-    "zh-tw"
-  ]
+  "keywords": ["cursor", "汉化", "中文语言包", "localization", "cli", "chinese", "zh-cn", "zh-tw", "русский", "russian", "ru", "language pack"]
 }
